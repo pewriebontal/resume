@@ -1,0 +1,2 @@
+#!/bin/sh
+pandoc resume.md --template=resume-template-tex/resume-template.tex -o resume.pdf --pdf-engine=xelatex

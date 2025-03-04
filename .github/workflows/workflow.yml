@@ -1,0 +1,33 @@
+name: Compile LaTeX
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+        fetch-depth: 0
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-full pandoc
+    
+    - name: Compile Resume
+      run: ./compile
+      
+    - name: Upload PDF
+      uses: actions/upload-artifact@v4
+      with:
+        name: resume
+        path: resume.pdf
+        compression-level: 0
