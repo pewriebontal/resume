@@ -1,2 +1,36 @@
-#!/bin/sh
-pandoc resume.md --template=resume-template.tex -o resume.pdf --pdf-engine=xelatex
+#!/bin/bash
+
+# Exit on error
+set -e
+
+echo "Compiling resume..."
+
+# Validate files exist
+if [ ! -f resume.md ]; then
+    echo "Error: resume.md not found"
+    exit 1
+fi
+
+if [ ! -f resume-template.tex ]; then
+    echo "Error: resume-template.tex not found"
+    exit 1
+fi
+
+# Extract name and job title from resume.md
+NAME=$(grep '^name:' resume.md | sed 's/^name: "\(.*\)"$/\1/' | tr -d ' ')
+JOB_TITLE="SoftwareEngineer"
+
+# Set output filename
+OUTPUT_FILE="${NAME}.Resume.${JOB_TITLE}.pdf"
+
+# Compile resume
+echo "Creating ${OUTPUT_FILE}..."
+pandoc resume.md --template=resume-template.tex -o "${OUTPUT_FILE}" --pdf-engine=xelatex
+
+# Verify the PDF was created
+if [ -f "${OUTPUT_FILE}" ]; then
+    echo "✓ Successfully compiled ${OUTPUT_FILE}"
+else
+    echo "Error: Failed to compile resume"
+    exit 1
+fi

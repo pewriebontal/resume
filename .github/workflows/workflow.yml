@@ -1,10 +1,16 @@
-name: Compile LaTeX
+name: Compile Resume
 
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'resume.md'
+      - 'resume-template.tex'
+      - '.github/workflows/workflow.yml'
+      - 'compile'
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -13,27 +19,44 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      with:
-        submodules: recursive
-        fetch-depth: 0
-    
-    - name: Cache apt packages
-      uses: actions/cache@v3
-      id: apt-cache
-      with:
-        path: /var/cache/apt/archives
-        key: ${{ runner.os }}-apt-${{ hashFiles('**/workflow.yml') }}
-
-    - name: Install dependencies
+      
+    - name: Install minimal TeX dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-full pandoc
-    - name: Compile Resume
+        sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra pandoc
+    
+    - name: Compile resume
       run: ./compile
       
-    - name: Upload PDF
+    - name: Get resume filename
+      id: get-filename
+      run: |
+        NAME=$(grep '^name:' resume.md | sed 's/^name: "\(.*\)"$/\1/' | tr -d ' ')
+        JOB_TITLE="SoftwareEngineer"
+        RESUME_FILE="${NAME}.Resume.${JOB_TITLE}.pdf"
+        echo "RESUME_FILE=${RESUME_FILE}" >> $GITHUB_ENV
+        echo "Resume file: ${RESUME_FILE}"
+    
+    - name: Upload PDF artifact
       uses: actions/upload-artifact@v4
       with:
         name: resume
-        path: resume.pdf
+        path: ${{ env.RESUME_FILE }}
         compression-level: 0
+        
+    - name: Create release on version tag
+      if: startsWith(github.ref, 'refs/tags/v')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ${{ env.RESUME_FILE }}
+        
+    - name: Create release on push to master
+      if: github.ref == 'refs/heads/master'
+      uses: softprops/action-gh-release@v1
+      with:
+        files: ${{ env.RESUME_FILE }}
+        tag_name: release-${{ github.run_number }}
+        name: "Resume Build ${{ github.run_number }}"
+        generate_release_notes: true
+        draft: false
+        token: ${{ secrets.GITHUB_TOKEN }}
