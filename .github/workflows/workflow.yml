@@ -17,10 +17,17 @@ jobs:
         submodules: recursive
         fetch-depth: 0
     
+    - name: Cache apt packages
+      uses: actions/cache@v3
+      id: apt-cache
+      with:
+        path: /var/cache/apt/archives
+        key: ${{ runner.os }}-apt-${{ hashFiles('**/workflow.yml') }}
+
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra pandoc    
+        sudo apt-get install -y texlive-full pandoc
     - name: Compile Resume
       run: ./compile
       
