@@ -1,0 +1,156 @@
+\documentclass[10.5pt,a4paper]{article}
+
+% Packages
+\usepackage[margin=0.45in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{setspace}
+$if(fontfamily)$
+\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+$endif$
+
+% Colors
+\definecolor{sectioncolor}{RGB}{0, 51, 102}
+\definecolor{linkcolor}{RGB}{0, 102, 204}
+
+% Format settings
+\titleformat{\section}{\large\bfseries\color{sectioncolor}}{\thesection}{1em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titlespacing*{\subsection}{0pt}{6pt}{3pt}
+
+% No paragraph indentation
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.2em} % Slightly increased paragraph spacing for readability
+
+% List formatting
+\setlist{leftmargin=*, topsep=1pt, parsep=0pt}
+\setlist[itemize]{label={\scriptsize\textbullet}, itemsep=1.5pt}
+
+% Hyperref setup
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkcolor,
+  filecolor=linkcolor,
+  urlcolor=linkcolor,
+  pdftitle={Resume - $name$},
+  pdfauthor={$name$},
+  pdfsubject={Professional Resume},
+  pdfkeywords={resume, $name$, software engineer, system programming, C, React, Flutter},
+  pdflang={en-US},
+  pdfstartview={FitH},
+  pdfpagemode={UseOutlines},
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  hidelinks=false,
+  breaklinks=true
+}
+
+\newcommand{\daterange}[1]{\textbf{#1}}
+
+\renewcommand{\baselinestretch}{1.15}
+
+\AtBeginDocument{\thispagestyle{empty}}
+
+\begin{document}
+
+% Header Section
+\begin{center}
+{\Large \textbf{$name$ ($nickname$)}}\\[0.12cm]
+\begin{tabular}{@{}c@{}}
+$if(mobile)$Mobile: $mobile$ $endif$
+$if(email)$| E-mail: \href{mailto:$email$}{$email$} $endif$
+$if(location)$| Location: $location$$endif$\\[0.05cm]
+$if(portfolio)$Portfolio: \href{$portfolio$}{$portfolio$} $endif$
+$if(linkedin)$| LinkedIn: \href{$linkedin$}{$linkedin$} $endif$
+$if(github)$| GitHub: \href{https://github.com/$github$}{$github$}$endif$
+\end{tabular}
+\end{center}
+
+% Summary Section
+$if(summary)$
+\section*{Summary}
+$summary$
+$endif$
+
+% Education Section
+$if(education)$
+\section*{Education}
+$for(education)$
+\noindent\textbf{$education.institution$} \hfill \daterange{$education.period$}\\
+$education.degree$
+\begin{itemize}
+$for(education.details)$
+\item $education.details$
+$endfor$
+\end{itemize}
+\vspace{-0.05cm}
+$endfor$
+$endif$
+
+% Experience Section
+$if(experience)$
+\section*{Relevant Experience}
+$for(experience)$
+\noindent\textbf{$experience.company$} \hfill \daterange{$experience.period$}\\
+\textit{$experience.title$}
+\begin{itemize}
+$for(experience.details)$
+\item $experience.details$
+$endfor$
+\end{itemize}
+\vspace{-0.05cm}
+$endfor$
+$endif$
+
+% Projects Section
+$if(projects)$
+\section*{Academic Projects}
+$for(projects)$
+\noindent\textbf{$projects.name$} \hfill \textit{$projects.institution$}
+\begin{itemize}
+$for(projects.details)$
+\item $projects.details$
+$endfor$
+\end{itemize}
+\vspace{-0.05cm}
+$endfor$
+$endif$
+
+% Co-Curricular Section
+$if(extracurricular)$
+\section*{Co-Curricular \& Other Experiences}
+$for(extracurricular)$
+\noindent\textbf{$extracurricular.position$}, $extracurricular.organization$ \hfill \daterange{$extracurricular.period$}
+\begin{itemize}
+$for(extracurricular.details)$
+\item $extracurricular.details$
+$endfor$
+\end{itemize}
+\vspace{-0.05cm}
+$endfor$
+$endif$
+
+% Skills Section
+$if(skills)$
+\section*{Skills and Abilities}
+
+$for(skills)$
+\subsection*{$skills.category$}
+$for(skills.items)$
+\noindent\textbf{$skills.items.name$:} $skills.items.description$\\[2.5pt]
+$endfor$
+\vspace{1pt}
+$endfor$
+$endif$
+
+% Footer with page number
+\vfill
+\begin{center}
+\footnotesize{Updated \today} \hfill \thepage/2
+\end{center}
+
+\end{document}
