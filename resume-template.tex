@@ -80,8 +80,8 @@ $endif$
 $if(education)$
 \section*{Education}
 $for(education)$
-\noindent\textbf{$education.institution$} \hfill \daterange{$education.period$}\\
-$education.degree$
+\noindent\textbf{$if(education.institution_url)$\href{$education.institution_url$}{$education.institution$}$else$$education.institution$$endif$} \hfill \daterange{$education.period$}\\
+$if(education.degree_url)$\href{$education.degree_url$}{$education.degree$}$else$$education.degree$$endif$
 \begin{itemize}
 $for(education.details)$
 \item $education.details$
@@ -95,8 +95,8 @@ $endif$
 $if(experience)$
 \section*{Relevant Experience}
 $for(experience)$
-\noindent\textbf{$experience.company$} \hfill \daterange{$experience.period$}\\
-\textit{$experience.title$}
+\noindent\textbf{$if(experience.company_url)$\href{$experience.company_url$}{$experience.company$}$else$$experience.company$$endif$} \hfill \daterange{$experience.period$}\\
+\textit{$if(experience.title_url)$\href{$experience.title_url$}{$experience.title$}$else$$experience.title$$endif$}
 \begin{itemize}
 $for(experience.details)$
 \item $experience.details$
@@ -110,7 +110,7 @@ $endif$
 $if(projects)$
 \section*{Academic Projects}
 $for(projects)$
-\noindent\textbf{$projects.name$} \hfill \textit{$projects.institution$}
+\noindent\textbf{$if(projects.url)$\href{$projects.url$}{$projects.name$}$else$$projects.name$$endif$} \hfill \textit{$if(projects.institution_url)$\href{$projects.institution_url$}{$projects.institution$}$else$$projects.institution$$endif$}
 \begin{itemize}
 $for(projects.details)$
 \item $projects.details$
@@ -124,7 +124,7 @@ $endif$
 $if(extracurricular)$
 \section*{Co-Curricular \& Other Experiences}
 $for(extracurricular)$
-\noindent\textbf{$extracurricular.position$}, $extracurricular.organization$ \hfill \daterange{$extracurricular.period$}
+\noindent\textbf{$if(extracurricular.position_url)$\href{$extracurricular.position_url$}{$extracurricular.position$}$else$$extracurricular.position$$endif$}, $extracurricular.organization$ \hfill \daterange{$extracurricular.period$}
 \begin{itemize}
 $for(extracurricular.details)$
 \item $extracurricular.details$

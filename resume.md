@@ -11,26 +11,34 @@ summary: "Aspiring Software Engineer with practical experience building full-sta
 
 education:
   - institution: "The University of Newcastle"
+    institution_url: "https://uon.edu.au/"
     degree: "Bachelor of Information Technology"
+    degree_url: "https://dl.bontal.net/academic/bachelor-bit/uon_bit_transcript.pdf"
     period: "Jan 2024 – Jan 2026"
     details:
       - "Achieved High Distinction (HD) in Object-Oriented Programming and earned Distinctions (D) in multiple courses including Data Structures, The Digital Economy, Project Management, and Web Technologies."
 
   - institution: "Singapore University of Technology and Design (SUTD)"
+    institution_url: "https://sutd.edu.sg/"
     degree: "École42 – French Diploma in Computer Science"
+    degree_url: "https://42singapore.sg/"
     period: "Sep 2023 – Sep 2025"
     details:
       - "Specializing in System Programming, Algorithms and Data Structures."
 
   - institution: "PSB Academy, Singapore"
+    institution_url: "http://psb-academy.edu.sg/"
     degree: "Diploma in InfoComm Technology"
+    degree_url: "https://dl.bontal.net/academic/diploma-it/23L030726.pdf"
     period: "Jan 2023 – Nov 2023"
     details:
       - "Earned Grade (A) in all courses completed."
 
 experience:
   - company: "Singapore University of Technology and Design (SUTD)"
+    company_url: "https://sutd.edu.sg/"
     title: "42 École Programme Pisciner"
+    title_url: "https://42singapore.sg/"
     period: "Jun 2023 – Jul 2023"
     details:
       - "Completed 12 individual and 4 group projects in C programming, Linux/Unix system administration, and shell scripting."
@@ -39,7 +47,9 @@ experience:
 
 projects:
   - name: "Hiraku (AI-Powered Smart Learning Companion)"
+    url: "https://github.com/HirakuAI/Hiraku-RAG"
     institution: "The University of Newcastle"
+    institution_url: "https://uon.edu.au/"
     details:
       - "Built a learning assistant that processes course materials across multiple document formats and makes them searchable using vector databases."
       - "Implemented document processing with LlamaIndex and used ChromaDB for vector storage to enable efficient content retrieval."
@@ -48,7 +58,9 @@ projects:
       - "Built the frontend with React 19 and Tailwind CSS, featuring real-time chat and file upload capabilities, connected to a Flask REST API backend."
 
   - name: "Where's my Classroom?"
+    url: "https://play.google.com/store/apps/details?id=net.bontal.psba.whereismyclassroom"
     institution: "The University of Newcastle"
+    institution_url: "https://uon.edu.au/"
     details:
       - "Developed a mobile app to help PSB Academy students locate classrooms in real-time"
       - "Integrated web scraping to collect room data and built AI-powered PDF parsing system to extract and interpret timetable data from Unstructured PDFs"
@@ -56,7 +68,9 @@ projects:
       - "Implemented push notifications for room changes and a focused UI showing today's/tomorrow's classes"
 
   - name: "Byte's Escape (2D game from scratch)"
+    url: "https://github.com/pewriebontal/bytes_escape"
     institution: "SUTD - École 42"
+    institution_url: "https://sutd.edu.sg/"
     details:
       - "Created a 2D game in C without using a game engine, implementing all graphics and game mechanics from scratch."
       - "Used Depth-first search algorithm for map validation and gameplay mechanics."
@@ -64,13 +78,16 @@ projects:
       - "Optimized memory usage and performance, setting up a modular build system with Make."
 
   - name: "BYAMC (Bon's Yet Another Mini C Standard Library)"
+    url: "https://github.com/pewriebontal/byamc"
     institution: "SUTD - École 42"
+    institution_url: "https://sutd.edu.sg/"
     details:
       - "Developed a compact C standard library focusing on essential string, memory, and list operations."
       - "Implemented common C library functions with performance optimization for core operations."
       - "Created a Makefile system for automated building and testing."
 
   - name: "Bing Chilling (Ambient Sound Meditation App)"
+    url: "https://play.google.com/store/apps/details?id=net.bontal.bingchilling"
     institution: "Personal Project"
     details:
       - "Developed a mobile app using Flutter that delivers high-quality ambient sounds with customizable settings."
@@ -80,7 +97,9 @@ projects:
       - "Published the application on Google Play Store."
 
   - name: "Bon and Jason's Shell (bjsh) - *NIX Shell"
+    url: "https://github.com/pewriebontal/bjsh"
     institution: "SUTD - École 42"
+    institution_url: "https://sutd.edu.sg/"
     details:
       - "Built a UNIX shell in C that supports command execution, piping, and redirection."
       - "Implemented background process handling and job control mechanisms."
@@ -95,6 +114,7 @@ extracurricular:
       - "Assisted international visitors with inquiries, demonstrating communication skills across language barriers."
 
   - position: "Warm-up DJ, Springheads 2024 @ SUTD"
+    position_url: "https://img.bontal.net/p/2"
     organization: "Singapore"
     period: "Jan 2024"
     details:
@@ -107,6 +127,7 @@ extracurricular:
       - 'Performed as in-house DJ under alias "Bontal" for the After Party for Burmese singer Kai Za Tin Moong''s concert.'
 
   # - position: "Kate Bush - Running Up that Hill (Bontal & Kiddo Remix)"
+  #   position_url: "https://soundcloud.com/bontal/kate-bush-running-up-that-hill-bontal-kiddo-remix"
   #   organization: ""
   #   period: ""
   #   details:
@@ -152,8 +173,8 @@ skills:
         description: "Peer programming, Knowledge sharing, Cross-functional teamwork"
       - name: "Continuous Learning"
         description: "Technology adaptation, Independent research, Skill development"
-      # - name: "Creative Production"
-      #   description: "Audio production, Sound design, Digital media creation"
+      - name: "Creative Production"
+        description: "Audio production, Sound design, Digital media creation"
 ---
 
 # $name$
