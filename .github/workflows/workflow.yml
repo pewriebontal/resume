@@ -7,7 +7,7 @@ on:
       - 'resume.md'
       - 'resume-template.tex'
       - '.github/workflows/workflow.yml'
-      - 'compile'
+      - 'Makefile'
   pull_request:
     branches: [ master ]
   workflow_dispatch:
@@ -20,20 +20,21 @@ jobs:
     - name: Checkout resume repository
       uses: actions/checkout@v3
       
-    - name: Install minimal TeX dependencies
+    - name: Install minimal TeX dependencies and Microsoft fonts
       run: |
         sudo apt-get update
-        sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra pandoc
+        echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+        sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra pandoc ttf-mscorefonts-installer
+        sudo fc-cache -f -v
     
     - name: Compile resume
-      run: ./compile
+      run: make
       
     - name: Get resume filename
       id: get-filename
       run: |
-        NAME=$(grep '^name:' resume.md | sed 's/^name: "\(.*\)"$/\1/' | tr -d ' ')
-        JOB_TITLE="SoftwareEngineer"
-        RESUME_FILE="${NAME}.Resume.${JOB_TITLE}.pdf"
+        # Extract the output filename directly from the Makefile info target
+        RESUME_FILE=$(make --no-print-directory info | grep "Output file:" | awk '{print $3}')
         echo "RESUME_FILE=${RESUME_FILE}" >> $GITHUB_ENV
         echo "Resume file: ${RESUME_FILE}"
     
