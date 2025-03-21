@@ -45,6 +45,8 @@ distclean: clean
 	@rm -f $(OUTPUT)
 	@echo "✓ PDF file removed"
 
+fclean: distclean
+
 # Show information about the resume
 info:
 	@echo "Resume information:"

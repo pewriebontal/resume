@@ -42,6 +42,7 @@ $endif$
   bookmarksopen=true,
   bookmarksnumbered=true,
   hidelinks=false,
+  pdfborderstyle={/S/U/W 1},
   breaklinks=true
 }
 
@@ -64,6 +65,10 @@ $endif$
 		$if(github)$| \href{https://github.com/$github$}{github.com/$github$}$endif$
 	\end{tabular}
 \end{center}
+
+$if(objective)$
+{\large\bfseries\color{sectioncolor}Objective:} \normalfont{$objective$}
+$endif$
 
 $if(summary)$
 \section*{Summary}
@@ -142,7 +147,7 @@ $endif$
 
 \vfill
 \begin{center}
-	\footnotesize{Updated \today}
+	\footnotesize{Updated \today \\ \textit{PDF contains active hyperlinks to referenced resources}}
 \end{center}
 
 \end{document}
