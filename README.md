@@ -78,11 +78,28 @@ make info
 make clean
 ```
 
+### Personal Information
+
+The resume uses a `.secrets` file for personal contact information:
+
+- Not committed to git repository
+- All fields are optional - placeholders used when missing
+- Comment out any field with `#` to use placeholder text instead
+
+Example `.secrets` file:
+```
+# Personal contact information
+RESUME_PHONE="87654321"
+# RESUME_LOCATION="Singapore"  # Uses placeholder
+RESUME_EMAIL="youremail@example.com"
+```
+
 ### File Structure
 
 - `resume.md` - Main content file in YAML/Markdown format
 - `resume-template.tex` - LaTeX template for PDF styling
 - `Makefile` - Build automation
+- `.secrets` - Personal contact information (not in git)
 - `.github/workflows/workflow.yml` - CI/CD configuration
 
 ### Deployment
