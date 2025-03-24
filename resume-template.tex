@@ -1,0 +1,153 @@
+\documentclass[10.5pt,a4paper]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{multicol}
+$if(fontfamily)$
+\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+$endif$
+
+\setmainfont{Georgia}
+
+\definecolor{sectioncolor}{RGB}{0, 102, 204}
+\definecolor{linkcolor}{RGB}{0, 0, 0}
+
+\titleformat{\section}{\large\bfseries\color{sectioncolor}}{\thesection}{1em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.15em}
+
+\setlist{leftmargin=*, topsep=1pt, parsep=0pt}
+\setlist[itemize]{label={\textbullet}, itemsep=1pt}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkcolor,
+  filecolor=linkcolor,
+  urlcolor=linkcolor,
+  pdftitle={Resume - $name$},
+  pdfauthor={$name$},
+  pdfsubject={Professional Resume},
+  pdfkeywords={resume, $name$, software engineer, system programming, C, React, Flutter},
+  pdflang={en-US},
+  pdfstartview={FitH},
+  pdfpagemode={UseOutlines},
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  hidelinks=false,
+  pdfborderstyle={/S/U/W 1},
+  breaklinks=true
+}
+
+\newcommand{\daterange}[1]{\textbf{#1}}
+
+\renewcommand{\baselinestretch}{1.15}
+
+\AtBeginDocument{\thispagestyle{empty}}
+
+\begin{document}
+
+\begin{center}
+	{\LARGE \textbf{$name$ ($nickname$)}}\\
+	\begin{tabular}{@{}c@{}}
+		$if(mobile)$$mobile$ $endif$
+		$if(email)$| \href{mailto:$email$}{$email$} $endif$
+		$if(location)$| $location$$endif$ \\
+			$if(portfolio)$\href{https://$portfolio$}{$portfolio$} $endif$
+		$if(linkedin)$| \href{https://$linkedin$}{$linkedin$} $endif$
+		$if(github)$| \href{https://github.com/$github$}{github.com/$github$}$endif$
+	\end{tabular}
+\end{center}
+
+$if(objective)$
+{\large\bfseries\color{sectioncolor}Objective:} \normalfont{$objective$}
+$endif$
+
+$if(summary)$
+\section*{Summary}
+$summary$
+$endif$
+
+$if(education)$
+\section*{Education}
+$for(education)$
+\noindent\textbf{$if(education.institution_url)$\href{$education.institution_url$}{$education.institution$}$else$$education.institution$$endif$} \hfill \daterange{$education.period$}\\
+$if(education.degree_url)$\href{$education.degree_url$}{$education.degree$}$else$$education.degree$$endif$
+\begin{itemize}
+	$for(education.details)$
+	\item $education.details$
+	      $endfor$
+\end{itemize}
+\vspace{-0.1cm}
+$endfor$
+$endif$
+
+$if(experience)$
+\section*{Experience}
+$for(experience)$
+\noindent\textbf{$if(experience.company_url)$\href{$experience.company_url$}{$experience.company$}$else$$experience.company$$endif$} \hfill \daterange{$experience.period$}\\
+\textit{$if(experience.title_url)$\href{$experience.title_url$}{$experience.title$}$else$$experience.title$$endif$}
+\begin{itemize}
+	$for(experience.details)$
+	\item $experience.details$
+	      $endfor$
+\end{itemize}
+\vspace{-0.1cm}
+$endfor$
+$endif$
+
+$if(projects)$
+\section*{Projects}
+$for(projects)$
+\noindent\textbf{$if(projects.url)$\href{$projects.url$}{$projects.name$}$else$$projects.name$$endif$} \hfill \textit{$if(projects.institution_url)$\href{$projects.institution_url$}{$projects.institution$}$else$$projects.institution$$endif$}
+\begin{itemize}
+	$for(projects.details)$
+	\item $projects.details$
+	      $endfor$
+\end{itemize}
+\vspace{-0.1cm}
+$endfor$
+$endif$
+
+$if(extracurricular)$
+\section*{Volunteer \& Extracurricular Experience}
+$for(extracurricular)$
+\noindent\textbf{$if(extracurricular.position_url)$\href{$extracurricular.position_url$}{$extracurricular.position$}$else$$extracurricular.position$$endif$}, $extracurricular.organization$ \hfill \daterange{$extracurricular.period$}
+\begin{itemize}
+	$for(extracurricular.details)$
+	\item $extracurricular.details$
+	      $endfor$
+\end{itemize}
+\vspace{-0.1cm}
+$endfor$
+$endif$
+
+$if(skills)$
+\section*{Technical Expertise}
+
+\begin{multicols}{2}
+	$for(skills)$
+	\noindent{\color{sectioncolor}\textbf{$skills.category$}}
+	\vspace{3pt}
+
+	$for(skills.items)$
+	\noindent\textbf{$skills.items.name$:} $skills.items.description$\\[2pt]
+	$endfor$
+	\vspace{0.5pt}
+	$endfor$
+\end{multicols}
+$endif$
+
+\vfill
+\begin{center}
+	\footnotesize{Updated \today \\ \textit{PDF contains active hyperlinks to referenced resources}}
+\end{center}
+
+\end{document}

@@ -1,0 +1,19 @@
+# Ignore secrets file
+.secrets
+
+# LaTeX temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.nav
+*.snm
+*.synctex.gz
+*.xdv
+
+# PDF output
+*.pdf

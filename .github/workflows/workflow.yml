@@ -1,0 +1,73 @@
+name: Compile and Publish Resume
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'resume.md'
+      - 'resume-template.tex'
+      - '.github/workflows/workflow.yml'
+      - 'Makefile'
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout resume repository
+      uses: actions/checkout@v3
+      
+    - name: Install minimal TeX dependencies and Microsoft fonts
+      run: |
+        sudo apt-get update
+        echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+        sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra pandoc ttf-mscorefonts-installer
+        sudo fc-cache -f -v
+    
+    - name: Compile resume
+      run: make
+      
+    - name: Get resume filename
+      id: get-filename
+      run: |
+        # Extract the output filename directly from the Makefile info target
+        RESUME_FILE=$(make --no-print-directory info | grep "Output file:" | awk '{print $3}')
+        echo "RESUME_FILE=${RESUME_FILE}" >> $GITHUB_ENV
+        echo "Resume file: ${RESUME_FILE}"
+    
+    - name: Set up SSH agent
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+        
+    - name: Add GitHub to known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+    
+    - name: Checkout storage repository
+      uses: actions/checkout@v3
+      with:
+        repository: pewriebontal/storage
+        path: storage-repo
+        ssh-key: ${{ secrets.DEPLOY_KEY }}
+        
+    - name: Create directories if needed
+      run: |
+        mkdir -p storage-repo/public/pdfs
+        
+    - name: Copy resume to storage repository
+      run: |
+        cp ${{ env.RESUME_FILE }} storage-repo/public/pdfs/
+        
+    - name: Commit and push changes
+      run: |
+        cd storage-repo
+        git config user.name "GitHub Actions Bot"
+        git config user.email "actions@github.com"
+        git add public/pdfs/${{ env.RESUME_FILE }}
+        git commit -m "Update resume to latest version [ci skip]" || echo "No changes to commit"
+        git push
