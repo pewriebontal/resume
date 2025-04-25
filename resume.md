@@ -39,16 +39,16 @@ education:
     details:
       - "Recieved A's in all courses completed."
 
-experience:
-  - company: "Singapore University of Technology and Design (SUTD)"
-    company_url: "https://sutd.edu.sg/"
-    title: "Pisciner, Cadet - École 42"
-    title_url: "https://42singapore.sg/"
-    period: "Jun 2023 – Jul 2023"
-    details:
-      - "Completed 12 individual and 4 group projects in C programming, Linux system administration, and shell scripting."
-      - "Implemented memory management solutions and applied version control with Git in a peer-evaluated environment."
-      - "Finished a month-long bootcamp focused on computer science and software engineering fundamentals."
+# experience:
+#   - company: "Singapore University of Technology and Design (SUTD)"
+#     company_url: "https://sutd.edu.sg/"
+#     title: "Pisciner, Cadet - École 42"
+#     title_url: "https://42singapore.sg/"
+#     period: "Jun 2023 – Jul 2023"
+#     details:
+#       - "Completed 12 individual and 4 group projects in C programming, Linux system administration, and shell scripting."
+#       - "Implemented memory management solutions and applied version control with Git in a peer-evaluated environment."
+#       - "Finished a month-long bootcamp focused on computer science and software engineering fundamentals."
 
 projects:
   - name: "Hiraku (AI-Powered Smart Learning Companion)"
@@ -79,6 +79,16 @@ projects:
       - "Designed and developed a compact system library and utilities focusing on lightweight design and including essential string manipulation, memory management, I/O operations, math functions, and list operations."
       - "Optimized core functions for performance while maintaining full ANSI C standard compliance."
       - "Tested the library with various software including BJSH and Byte's Escape, conducted benchmarks showing performance improvements over *libc* in specific memory operations, with *bzero* performing 8% faster on large data sets, 2% faster on medium data, and *memmove* executing 4% faster on medium-sized operations."
+
+  - name: "École 42 Piscine Projects"
+    url: "https://github.com/pewriebontal/c-piscine"
+    institution: "SUTD - École 42"
+    institution_url: "https://sutd.edu.sg/"
+    # period: "Jun 2023 – Jul 2023" 
+    details:
+      - "Completed 12 individual and 4 group projects in C programming, Linux system administration, and shell scripting during the intensive Piscine bootcamp"
+      - "Implemented memory management solutions and applied version control with Git in a peer-evaluated environment."
+      - "Focused on computer science and software engineering fundamentals through hands-on C programming challenges."
 
   - name: "Where's my Classroom?"
     url: "https://play.google.com/store/apps/details?id=net.bontal.psba.whereismyclassroom"
