@@ -19,29 +19,42 @@ TEX_TEMP = *.aux *.log *.out *.toc *.bbl *.blg *.fls *.fdb_latexmk *.nav *.snm *
 
 # Default placeholder values (without spaces to avoid pandoc issues)
 PHONE_FORMATTED = "Contact-on-request"
+PHONE_RAW = "Contact-on-request"
+RESUME_COUNTRY_CODE_DEFAULT = "XX"
 RESUME_LOCATION = "Location-on-request"
 RESUME_EMAIL = "Email-on-request"
 
 # Check if secrets file exists and read values if present
 ifneq ("$(wildcard $(SECRETS_FILE))","")
     # Try to read phone number - grep for line starting with RESUME_PHONE (not commented out)
-    RESUME_PHONE := $(shell grep -E '^RESUME_PHONE=' $(SECRETS_FILE) | cut -d'"' -f2 2>/dev/null)
-    ifneq ($(RESUME_PHONE),)
+    RESUME_PHONE_TMP := $(shell grep -E '^RESUME_PHONE=' $(SECRETS_FILE) | cut -d'"' -f2 2>/dev/null)
+    ifneq ($(RESUME_PHONE_TMP),)
         # Format phone number with a space (XXXXXXXX -> XXXX XXXX)
-        PHONE_FORMATTED := $(shell echo $(RESUME_PHONE) | sed 's/\(....\)\(.*\)/\1 \2/')
+        PHONE_FORMATTED := $(shell echo $(RESUME_PHONE_TMP) | sed 's/\(....\)\(.*\)/\1 \2/')
+        PHONE_RAW := $(RESUME_PHONE_TMP)
     endif
-    
+
+    # Try to read country code
+    RESUME_COUNTRY_CODE_TMP := $(shell grep -E '^RESUME_COUNTRY_CODE=' $(SECRETS_FILE) | cut -d'"' -f2 2>/dev/null)
+    ifneq ($(RESUME_COUNTRY_CODE_TMP),)
+        RESUME_COUNTRY_CODE := $(RESUME_COUNTRY_CODE_TMP)
+    else
+        RESUME_COUNTRY_CODE := $(RESUME_COUNTRY_CODE_DEFAULT)
+    endif
+
     # Try to read location
     RESUME_LOCATION_TMP := $(shell grep -E '^RESUME_LOCATION=' $(SECRETS_FILE) | cut -d'"' -f2 2>/dev/null)
     ifneq ($(RESUME_LOCATION_TMP),)
         RESUME_LOCATION := $(RESUME_LOCATION_TMP)
     endif
-    
+
     # Try to read email
     RESUME_EMAIL_TMP := $(shell grep -E '^RESUME_EMAIL=' $(SECRETS_FILE) | cut -d'"' -f2 2>/dev/null)
     ifneq ($(RESUME_EMAIL_TMP),)
         RESUME_EMAIL := $(RESUME_EMAIL_TMP)
     endif
+else
+    RESUME_COUNTRY_CODE := $(RESUME_COUNTRY_CODE_DEFAULT) # Use default if .secrets doesn't exist
 endif
 
 # Default target - compile resume
@@ -59,6 +72,7 @@ check-secrets:
 			echo "" >> $(SECRETS_TEMPLATE); \
 			echo "# Personal contact information" >> $(SECRETS_TEMPLATE); \
 			echo "RESUME_PHONE=\"XXXXXXXX\"  # Without spaces, will be formatted during compilation" >> $(SECRETS_TEMPLATE); \
+			echo "RESUME_COUNTRY_CODE=\"XX\" # Your country code (e.g., 65 for Singapore)" >> $(SECRETS_TEMPLATE); \
 			echo "RESUME_LOCATION=\"City, Country\"" >> $(SECRETS_TEMPLATE); \
 			echo "RESUME_EMAIL=\"your.email@example.com\"" >> $(SECRETS_TEMPLATE); \
 			echo "" >> $(SECRETS_TEMPLATE); \
@@ -78,11 +92,15 @@ $(OUTPUT): $(SRC_MD) $(SRC_TEX)
 		echo "Error: $(SRC_TEX) not found"; \
 		exit 1; \
 	fi
-	@echo "Using phone number: $(PHONE_FORMATTED)"
+	@echo "Using phone number (display): $(PHONE_FORMATTED)"
+	@echo "Using phone number (raw): $(PHONE_RAW)"
+	@echo "Using country code: $(RESUME_COUNTRY_CODE)"
 	@echo "Using location: $(RESUME_LOCATION)"
 	@echo "Using email: $(RESUME_EMAIL)"
 	@pandoc $(SRC_MD) --template=$(SRC_TEX) \
-		-V mobile="$(PHONE_FORMATTED)" \
+		-V mobile_display="$(PHONE_FORMATTED)" \
+		-V mobile_raw="$(PHONE_RAW)" \
+		-V country_code="$(RESUME_COUNTRY_CODE)" \
 		-V location="$(RESUME_LOCATION)" \
 		-V email="$(RESUME_EMAIL)" \
 		-o $(OUTPUT) --pdf-engine=xelatex
@@ -105,7 +123,9 @@ info:
 	@echo "Resume information:"
 	@echo "  Name: $(NAME)"
 	@echo "  Output file: $(OUTPUT)"
-	@echo "  Phone: $(PHONE_FORMATTED)"
+	@echo "  Phone (Display): $(PHONE_FORMATTED)"
+	@echo "  Phone (Raw): $(PHONE_RAW)"
+	@echo "  Country Code: $(RESUME_COUNTRY_CODE)"
 	@echo "  Location: $(RESUME_LOCATION)"
 	@echo "  Email: $(RESUME_EMAIL)"
 	@echo "  File name length: $$(echo -n "$(OUTPUT)" | wc -c) characters"

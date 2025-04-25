@@ -27,6 +27,12 @@ jobs:
         sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra pandoc ttf-mscorefonts-installer
         sudo fc-cache -f -v
     
+    - name: Install Fonts
+      run: |
+        mkdir -p ~/.local/share/fonts
+        cp ./assets/fonts/**/*.ttf ~/.local/share/fonts/
+        fc-cache -f -v
+
     - name: Compile resume
       run: make
       
