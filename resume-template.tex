@@ -114,17 +114,20 @@ $endif$
 $endfor$
 $endif$
 
-% --- 4. TECHNICAL EXPERTISE ---
+% --- 4. SKILLS ---
 $if(skills)$
-\section*{Technical Expertise}
+\section*{Skills}
 \begin{multicols}{2}
-	$for(skills)$
-	\noindent{\color{sectioncolor}\textbf{$skills.category$}}
-	\vspace{3pt}
-	$for(skills.items)$
-	\noindent\textbf{$skills.items.name$:} $skills.items.description$\\[2pt]
+	\noindent{\color{sectioncolor}\textbf{Technical Skills}}\\
+	$for(technical_items)$
+	\noindent\textbf{$technical_items.name$:} $technical_items.description$\\[2pt]
 	$endfor$
-	\vspace{5pt}
+
+	\columnbreak
+
+	\noindent{\color{sectioncolor}\textbf{Soft Skills}}\\
+	$for(professional_items)$
+	\noindent\textbf{$professional_items.name$:} $professional_items.description$\\[2pt]
 	$endfor$
 \end{multicols}
 $endif$
@@ -133,7 +136,7 @@ $endif$
 $if(projects)$
 \section*{Projects}
 $for(projects)$
-\noindent\textbf{$if(projects.url)$\href{$projects.url$}{$projects.name$}$else$$projects.name$$endif$} \hfill \textit{$if(projects.institution_url)$\href{$projects.institution_url$}{$projects.institution$}$else$$projects.institution$$endif$}
+\noindent\textbf{$if(projects.url)$\href{$projects.url$}{$projects.name$}$else$$projects.name$$endif$} \hfill \textbf{$if(projects.institution_url)$\href{$projects.institution_url$}{$projects.institution$}$else$\textit{$projects.institution$}$endif$} % Changed \textit to \textbf for the linked institution, kept italic for non-linked
 \begin{entryDetails}
 	$for(projects.details)$
 	\item $projects.details$

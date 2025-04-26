@@ -10,7 +10,7 @@ linkedin: "linkedin.com/in/pewriebontal"
 github: "pewriebontal"
 objective: "Systems Analyst or Systems Programmar"
 #objective: "Software Engineer with Python, Java, and React experience, seeking a position to apply programming skills in practical solutions."
-summary: "Motivated IT undergraduate from University of Newcastle with exceptional academic standing, including High Distinction in Object-Oriented Programming. Experienced in system programming, full-stack development, and AI technologies through projects like Hiraku (AI learning assistant using RAG and LlamaIndex) and custom UNIX shell implementation. Proficient in multiple programming languages (C, C++, Python, JavaScript/TypeScript) with demonstrated expertise in software architecture, algorithm optimization, and cross-platform development. Keen to bring this hands-on experience in system development and problem-solving to your company, focusing on delivering high-quality, dependable code for technical challenges."
+summary: "Motivated IT undergraduate from University of Newcastle with exceptional academic standing, including High Distinction in Object-Oriented Programming. Experienced in system programming, full-stack development, and AI technologies through projects like Hiraku (AI learning assistant using RAG and LlamaIndex) and custom UNIX shell implementation. Proficient in multiple programming languages (C, C++, Python, JavaScript/TypeScript) with demonstrated expertise in software architecture, algorithm optimization, and cross-platform development. Keen to bring my meticulous approach and hands-on project experience, delivering reliable, high-quality code for your system analysis and programming challenges."
 
 education:
   - institution: "The University of Newcastle"
@@ -84,7 +84,7 @@ projects:
     url: "https://github.com/pewriebontal/c-piscine"
     institution: "SUTD - École 42"
     institution_url: "https://sutd.edu.sg/"
-    # period: "Jun 2023 – Jul 2023" 
+    # period: "Jun 2023 – Jul 2023"
     details:
       - "Completed 12 individual and 4 group projects in C programming, Linux system administration, and shell scripting during the intensive Piscine bootcamp"
       - "Implemented memory management solutions and applied version control with Git in a peer-evaluated environment."
@@ -149,29 +149,33 @@ extracurricular:
   #     - "Produced a trance remix of Kate Bush's classic song on SoundCloud in collaboration with DJ Kiddo."
   #     - "Reimagined the track with original production elements to create a unique version."
 
-skills:
-  - category: "Development & Engineering"
-    items:
-      - name: "Programming & Scripting"
-        description: "C, C++, Java, C#, JavaScript/TypeScript, Python, Dart, SQL; Bash, Zsh, PowerShell, CMD, Batch files; Algorithm design, Data structures"
-      - name: "Web, Mobile & Game"
-        description: "React.js, Node.js, Flask RESTful, Tailwind CSS, Full-Stack; .NET MAUI, Flutter, Material Design; Unity3D, Game physics/mechanics/AI; MVVM Architecture"
-      - name: "Architecture & UI/UX"
-        description: "Component design, API structuring, Authentication systems; Responsive interfaces, User flow, Cross-platform; Performance optimization, Debugging"
+skills: true
 
-  - category: "Systems & Tools"
-    items:
-      - name: "Infrastructure"
-        description: "Linux (SUSE, Debian, Arch, Alpine), Unix, Windows, Android; Memory management, Process control, IPC, Shell development; Apache, Nginx, .htaccess, Virtual hosts"
-      - name: "DevOps & Tools"
-        description: "Docker, Virtualization, CI/CD, Azure; Git, GitHub, GitLab, Repo management; JetBrains IDEs, VS Code, Make, Valgrind, GDB; Network protocols, Cybersecurity, Cryptography"
-      - name: "Data & AI"
-        description: "SQL, SQLite, Vector Databases (ChromaDB), Data modeling/administration; LLM, RAG, Machine Learning, Data Visualization, Power BI"
+technical_items:
+  - name: "Programming Languages"
+    description: "C, C++, Python, Java, JavaScript/TypeScript, C#, Dart, SQL, Shell Scripting (Bash, Zsh, PowerShell)"
+  - name: "Frameworks & Libraries"
+    description: "React.js, Node.js, Flask, Tailwind CSS, .NET MAUI, Flutter, Unity3D (Familiarity)"
+  - name: "Databases"
+    description: "Relational DBs (Microsoft SQL Server, MySQL, SQLite), NoSQL (Redis), Vector DB (ChromaDB), Data Modeling Concepts"
+  - name: "AI/ML"
+    description: "Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), LlamaIndex, YOLO (Object Detection)"
+  - name: "Systems & Tools"
+    description: "Linux/Unix, Windows OS, Git (incl. GitHub, GitLab), Docker, Virtualization (Conceptual Understanding), CI/CD (Conceptual Understanding), Azure (Familiarity), Web Servers (Apache, Nginx), Vercel, Power BI (Business Intelligence), Make, GDB, Valgrind"
+  - name: "Core Concepts"
+    description: "Data Structures, Algorithms, Object-Oriented Programming, Memory Management (C), Inter-Process Communication (IPC), RESTful API Design, Full-Stack Development, UI/UX Principles, Debugging"
 
-  - category: "Professional"
-    items:
-      - name: "Management & Skills"
-        description: "Software Project Management, Task planning, Deadlines, Resource allocation; Pair programming, Knowledge sharing, Cross-functional teamwork; Technical documentation, Code review, Testing; Technology adaptation, Independent research; DJing, Digital media creation"
+professional_items:
+  - name: "Problem-Solving"
+    description: "Proven ability to analyze issues and implement solutions through algorithm design (DFS in game), system debugging (C library, shell), and overcoming project challenges (PDF parsing)."
+  - name: "Meticulous / Attention to Detail"
+    description: "Focused on delivering reliable, high-quality code, evidenced by performance optimization (BYAMC benchmarks), testing procedures, and technical documentation."
+  - name: "Teamwork & Communication"
+    description: "Experience collaborating in pair programming (BJSH project), group projects (Piscine, Hiraku), peer-learning environments (École 42), and communicating with diverse individuals (Volunteering)."
+  - name: "Adaptability & Fast Learner"
+    description: "Quickly learned and applied diverse technologies across projects (.NET MAUI, Flutter, AI/RAG) and through intensive, self-directed learning (Piscine)."
+  - name: "Organization & Planning"
+    description: "Effectively managed project tasks, planned development phases (flowcharting for BJSH), and adhered to timelines in academic and bootcamp settings."
 ---
 
 # $name$
