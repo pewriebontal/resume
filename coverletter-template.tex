@@ -1,0 +1,125 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- PACKAGES ---
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{ifthen}
+\usepackage{background}
+$if(fontfamily)$
+\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+$endif$
+
+% --- FONT & COLOR DEFINITIONS ---
+\setmainfont{Aptos}
+\definecolor{accentblue}{RGB}{0, 102, 204}
+\definecolor{linkcolor}{RGB}{0, 0, 0}
+\definecolor{paperbg}{RGB}{244, 241, 236}
+
+% --- BACKGROUND COLOR ---
+\backgroundsetup{
+  scale=1,
+  angle=0,
+  opacity=1,
+  color=paperbg,
+  contents={}
+}
+
+% --- LAYOUT & SPACING ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\renewcommand{\baselinestretch}{1.15}
+
+% --- HYPERREF SETUP ---
+\hypersetup{
+  colorlinks=true,
+  linkcolor=linkcolor,
+  filecolor=linkcolor,
+  urlcolor=accentblue,
+  pdftitle={Cover Letter – $name$},
+  pdfauthor={$name$},
+  pdfsubject={Cover Letter},
+  pdfkeywords={cover letter, $name$, $job_title$},
+  pdflang={en-US},
+  pdfstartview={FitH},
+  pdfpagemode={UseOutlines},
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  hidelinks=false,
+  pdfborderstyle={/S/U/W 1},
+  breaklinks=true
+}
+
+% --- DOCUMENT START ---
+\begin{document}
+\thispagestyle{empty}
+\BgThispage
+
+% --- HEADER ---
+\begin{minipage}[t]{0.5\textwidth}
+	{\Large\textbf{$name$ $if(nickname)$ ($nickname$)$endif$}}\\
+	{\color{accentblue}\large $job_title$}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+	\begin{flushright}
+		\href{https://wa.me/$country_code$$mobile_raw$}{WhatsApp: $mobile_display$}\\
+		$if(email)$\href{mailto:$email$}{$email$}$endif$\\
+		$if(location)$$location$$endif$
+	\end{flushright}
+\end{minipage}
+
+\noindent\rule{\textwidth}{0.5pt}
+
+% --- DATE ---
+\begin{flushright}
+	$date$
+\end{flushright}
+
+% --- RECIPIENT ---
+\begin{flushleft}
+	$if(recipient_name)$$recipient_name$$endif$\\
+	$if(recipient_title)$$recipient_title$$endif$\\
+	$if(company_name)$$company_name$$endif$\\
+	$if(company_address)$$company_address$$endif$
+\end{flushleft}
+
+\vspace{0.5cm}
+
+% --- JOB REFERENCE ---
+\begin{center}
+	\textbf{\MakeUppercase{Job Reference: $job_title$}}
+\end{center}
+
+\vspace{0.3cm}
+
+% --- SALUTATION ---
+\begin{flushleft}
+	$salutation$
+\end{flushleft}
+
+% --- BODY ---
+\begin{spacing}{1.15}
+	$body$
+\end{spacing}
+
+% --- CLOSING ---
+\vspace{0.4cm}
+\begin{flushleft}
+	$closing$,\\
+	\vspace{0.1cm}
+	% Check if signature file exists
+	\IfFileExists{./signature.png}{
+		\includegraphics[height=2cm]{./signature.png}\\
+	}{
+		% No signature file - show name instead
+		\vspace{0.8cm}
+		$name$
+	}
+\end{flushleft}
+
+\end{document}

@@ -1,11 +1,13 @@
-name: Compile and Publish Resume
+name: Compile and Publish Resume & Cover Letter
 
 on:
   push:
     branches: [ master ]
     paths:
       - 'resume.md'
+      - 'coverletter.md'
       - 'resume-template.tex'
+      - 'coverletter-template.tex'
       - '.github/workflows/workflow.yml'
       - 'Makefile'
   pull_request:
@@ -17,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Checkout resume repository
+    - name: Checkout repository
       uses: actions/checkout@v3
       
     - name: Install minimal TeX dependencies and Microsoft fonts
@@ -33,16 +35,18 @@ jobs:
         cp ./assets/fonts/**/*.ttf ~/.local/share/fonts/
         fc-cache -f -v
 
-    - name: Compile resume
+    - name: Compile resume and cover letter
       run: make
       
-    - name: Get resume filename
-      id: get-filename
+    - name: Get file information
+      id: get-filenames
       run: |
-        # Extract the output filename directly from the Makefile info target
-        RESUME_FILE=$(make --no-print-directory info | grep "Output file:" | awk '{print $3}')
+        RESUME_FILE=$(make --no-print-directory info | grep "Resume output file:" | awk '{print $4}')
+        COVER_FILE=$(make --no-print-directory info | grep "Cover letter output file:" | awk '{print $5}')
         echo "RESUME_FILE=${RESUME_FILE}" >> $GITHUB_ENV
+        echo "COVER_FILE=${COVER_FILE}" >> $GITHUB_ENV
         echo "Resume file: ${RESUME_FILE}"
+        echo "Cover letter file: ${COVER_FILE}"
     
     - name: Set up SSH agent
       uses: webfactory/ssh-agent@v0.8.0
@@ -65,15 +69,17 @@ jobs:
       run: |
         mkdir -p storage-repo/public/pdfs
         
-    - name: Copy resume to storage repository
+    - name: Copy files to storage repository
       run: |
         cp ${{ env.RESUME_FILE }} storage-repo/public/pdfs/
+        cp ${{ env.COVER_FILE }} storage-repo/public/pdfs/
         
     - name: Commit and push changes
       run: |
         cd storage-repo
         git config user.name "GitHub Actions Bot"
         git config user.email "actions@github.com"
-        git add public/pdfs/${{ env.RESUME_FILE }}
-        git commit -m "Update resume to latest version [ci skip]" || echo "No changes to commit"
+        git add public/pdfs/$(basename ${{ env.RESUME_FILE }})
+        git add public/pdfs/$(basename ${{ env.COVER_FILE }})
+        git commit -m "Update resume and cover letter to latest version [ci skip]" || echo "No changes to commit"
         git push

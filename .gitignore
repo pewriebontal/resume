@@ -20,3 +20,6 @@ bak/
 
 # PDF output
 *.pdf
+
+# signature png
+signature.png
