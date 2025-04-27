@@ -56,39 +56,38 @@ projects:
     institution: "The University of Newcastle"
     institution_url: "https://uon.edu.au/"
     details:
-      - "Involved in working on content-aware AI learning assistant for Newcastle Australia IHE as a systems programmar."
-      - "The project uses Natural Language Understanding to query the University's course materials across different document formats and uses retrieval augmented generation (RAG) technology."
-      - "Designed system pipeline and implemented document processing with LlamaIndex alongside ChromaDB for content retrieval. Finetuned LLAMA 3.2 model with custom dataset for educational applications."
-      - "Developed Python backend with Flask RESTful API, user authentication (JWT tokens and password hashing), and SQLite database integration."
-      - "Constructed the frontend using React.js and Tailwind CSS, featuring real-time chat functionality."
+      - "Built Hiraku, a specialized AI chat assistant providing answers derived exclusively from student-uploaded course materials."
+      - "Engineered the core AI system using Retrieval-Augmented Generation (RAG with LlamaIndex, ChromaDB) and fine-tuned a Llama language model on custom educational data."
+      - "Developed the secure backend API with Python (Flask), JWT authentication, and SQLite database integration."
+      - "Constructed the responsive frontend using React.js and Tailwind CSS, featuring real-time chat capabilities."
 
   - name: "Bon and Jason's Shell (bjsh) - UNIX Shell"
     url: "https://pewrie.bontal.net/projects/bjsh"
     institution: "SUTD - École 42"
     institution_url: "https://sutd.edu.sg/"
     details:
-      - "Involved in the designing and development with Jason to build a lightweight command-line interface for UNIX-like systems using ANSI C, including flowcharting, coding, debugging, optimization, and documentation."
-      - "Worked on command parsing and execution, piping, I/O redirection, signal handling and job control mechanisms."
-      - "Tested the shell on various UNIX-like systems, conducted benchmarks, and optimized performance for responsiveness and resource efficiency."
+      - 'Designed and Built "bjsh", a custom UNIX shell in ANSI C, leading implementation from initial flowcharting through final testing and optimization.'
+      - "Implemented essential shell operations: command interpretation/execution, data piping between processes, I/O redirection, system signal management, and job control features."
+      - "Executed comprehensive testing and benchmarking on multiple UNIX platforms to ensure reliability and optimize for speed and low resource consumption."
 
   - name: "BYAMC (Bon's Yet Another Mini C System Library)"
     url: "https://github.com/pewriebontal/byamc"
     institution: "SUTD - École 42"
     institution_url: "https://sutd.edu.sg/"
     details:
-      - "Designed and developed a compact system library and utilities focusing on lightweight design and including essential string manipulation, memory management, I/O operations, math functions, and list operations."
-      - "Optimized core functions for performance while maintaining full ANSI C standard compliance."
-      - "Tested the library with various software including BJSH and Byte's Escape, conducted benchmarks showing performance improvements over *libc* in specific memory operations, with *bzero* performing 8% faster on large data sets, 2% faster on medium data, and *memmove* executing 4% faster on medium-sized operations."
+      - "Developed BYAMC, a lightweight ANSI C system library featuring essential string manipulation, memory management, I/O, math, and list operations."
+      - "Optimized core library functions for performance while ensuring full ANSI C compliance, validated through integration testing with other projects (BJSH, Byte's Escape)."
+      - "Conducted benchmarks showing performance improvements over *libc* in specific memory operations, with *bzero* performing 8% faster on large data sets, 2% faster on medium data, and *memmove* executing 4% faster on medium-sized operations."
 
-  - name: "École 42 Piscine Projects"
-    url: "https://github.com/pewriebontal/c-piscine"
-    institution: "SUTD - École 42"
-    institution_url: "https://sutd.edu.sg/"
-    # period: "Jun 2023 – Jul 2023"
-    details:
-      - "Completed 12 individual and 4 group projects in C programming, Linux system administration, and shell scripting during the intensive Piscine bootcamp"
-      - "Implemented memory management solutions and applied version control with Git in a peer-evaluated environment."
-      - "Focused on computer science and software engineering fundamentals through hands-on C programming challenges."
+  # - name: "École 42 Piscine Projects"
+  #   url: "https://github.com/pewriebontal/c-piscine"
+  #   institution: "SUTD - École 42"
+  #   institution_url: "https://sutd.edu.sg/"
+  #   # period: "Jun 2023 – Jul 2023"
+  #   details:
+  #     - "Completed 12 individual and 4 group projects in C programming, Linux system administration, and shell scripting during the intensive Piscine bootcamp"
+  #     - "Implemented memory management solutions and applied version control with Git in a peer-evaluated environment."
+  #     - "Focused on computer science and software engineering fundamentals through hands-on C programming challenges."
 
   - name: "Where's my Classroom?"
     url: "https://play.google.com/store/apps/details?id=net.bontal.psba.whereismyclassroom"
@@ -96,37 +95,32 @@ projects:
     institution_url: "https://uon.edu.au/"
     details:
       - "Developed a mobile app to help PSB Academy students locate classrooms in real-time using .Net Maui Framework."
-      - "Integrated web scraping to collect room data and built LLM based PDF parsing system to extract and interpret timetable data from Unstructured PDFs."
-      - "Created cross-platform solution (iOS/Android/Web) with offline caching machanism."
-      - "Implemented push notifications for room changes and a focused UI showing today's/tomorrow's classes."
+      - "Integrated web scraping and engineered an LLM-based system to parse unstructured PDF timetables for room data extraction."
+      - "Delivered a cross-platform solution (iOS/Android/Web) featuring offline caching and push notifications for room changes."
 
   - name: "Bing Chilling (Ambient Sound Meditation App)"
     url: "https://play.google.com/store/apps/details?id=net.bontal.bingchilling"
     institution: "Personal Project"
     details:
-      - "Developed a mobile app using Flutter SDK that delivers high-quality ambient sounds with customizable settings."
-      - "Designed a responsive interface using Material Design 3 with dynamic theming and intuitive controls."
-      - "Implemented background audio playback to support meditation sessions."
-      - "Used Riverpod for state management and integrated `audio_service` and `just_audio` libraries."
-      - "Published the application on Google Play Store."
+      - "Developed 'Bing Chilling,' a Flutter mobile app delivering customizable ambient sounds with background audio playback capabilities."
+      - "Designed a responsive Material Design 3 user interface and managed application state using Riverpod, integrating audio_service and just_audio libraries."
+      - "Published the fully functional application to the Google Play Store."
 
-  - name: "Byte's Escape (2D game from scratch)"
+  - name: "Byte's Escape (2D game in C)"
     url: "https://github.com/pewriebontal/bytes_escape"
     institution: "SUTD - École 42"
     institution_url: "https://sutd.edu.sg/"
     details:
-      - "Developed a 2D game in C Programming Language without using a game engine, implementing all graphics and game mechanics from scratch."
-      - "Used Depth-first search algorithm for map validation and gameplay mechanics."
-      - "Built custom rendering systems, player movement physics, and game state management."
-      - "Optimized memory usage and performance, setting up a modular build system with Make."
+      - "Engineered ‘Byte’s Escape,’ a 2D game in C, implementing custom graphics rendering, physics, and game mechanics without external game engines."
+      - "Developed custom systems for rendering, physics, and state management, incorporating Depth-First Search (DFS) for core game logic and map validation."
+      - "Optimized application performance and memory usage, configuring a modular build system using Make."
 
 extracurricular:
   - position: "General Volunteer, Heartware Network – River Hongbao 2024"
     organization: "Singapore"
     period: "Feb 2024"
     details:
-      - "Managed crowd control at various checkpoints and the lantern area during a major festival."
-      - "Assisted international visitors with inquiries, demonstrating communication skills across language barriers."
+      - "Managed crowd flow and assisted diverse international visitors, demonstrating effective communication during the large-scale River Hongbao 2024 festival."
 
   - position: "DJ, Springheads 2024 at SUTD"
     position_url: "https://img.bontal.net/p/2"
@@ -153,17 +147,17 @@ skills: true
 
 technical_items:
   - name: "Programming Languages"
-    description: "C, C++, Python, Java, JavaScript/TypeScript, C#, Dart, SQL, Shell Scripting (Bash, Zsh, PowerShell)"
+    description: "C, C++, Python, Java, C#, Dart, SQL,JavaScript/TypeScript, Shell Scripting (Bash, Zsh, PowerShell)"
   - name: "Frameworks & Libraries"
-    description: "React.js, Node.js, Flask, Tailwind CSS, .NET MAUI, Flutter, Unity3D (Familiarity)"
+    description: "React.js, Node.js, Flask, FastAPI, Tailwind CSS, HTML, CSS, SQLAlchemy, Celery, .NET MAUI, Flutter, Unity3D (Familiarity)"
   - name: "Databases"
     description: "Relational DBs (Microsoft SQL Server, MySQL, SQLite), NoSQL (Redis), Vector DB (ChromaDB), Data Modeling Concepts"
   - name: "AI/ML"
     description: "Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), LlamaIndex, YOLO (Object Detection)"
   - name: "Systems & Tools"
-    description: "Linux/Unix, Windows OS, Git (incl. GitHub, GitLab), Docker, Virtualization (Conceptual Understanding), CI/CD (Conceptual Understanding), Azure (Familiarity), Web Servers (Apache, Nginx), Vercel, Power BI (Business Intelligence), Make, GDB, Valgrind"
+    description: "Linux/Unix, Git (incl. GitHub, GitLab), Docker, Virtualization (Conceptual Understanding), CI/CD (Conceptual Understanding), Azure (Familiarity), Web Servers (Apache, Nginx), Vercel, Power BI, Environment Configuration, Make, GDB, Valgrind"
   - name: "Core Concepts"
-    description: "Data Structures, Algorithms, Object-Oriented Programming, Memory Management (C), Inter-Process Communication (IPC), RESTful API Design, Full-Stack Development, UI/UX Principles, Debugging"
+    description: "Data Structures, Algorithms, Object-Oriented Programming, Memory Management (C), Inter-Process Communication, RESTful API Design, Full-Stack Development, Asynchronous Processing, Concurrent Processing, Task Queues, Caching Mechanisms, Logging, Debugging"
 
 professional_items:
   - name: "Problem-Solving"
@@ -176,6 +170,13 @@ professional_items:
     description: "Quickly learned and applied diverse technologies across projects (.NET MAUI, Flutter, AI/RAG) and through intensive, self-directed learning (Piscine)."
   - name: "Organization & Planning"
     description: "Effectively managed project tasks, planned development phases (flowcharting for BJSH), and adhered to timelines in academic and bootcamp settings."
+
+languages:
+  - name: "English"
+    level: "Native / Bilingual Proficiency"
+  - name: "Burmese"
+    level: "Native / Bilingual Proficiency"
+# references: "Available upon request."
 ---
 
 # $name$

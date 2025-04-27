@@ -130,6 +130,7 @@ $if(skills)$
 	\noindent\textbf{$professional_items.name$:} $professional_items.description$\\[2pt]
 	$endfor$
 \end{multicols}
+\vspace{-25pt}
 $endif$
 
 % --- 5. PROJECTS ---
@@ -179,6 +180,22 @@ $for(extracurricular)$
 	$endfor$
 \end{entryDetails}
 $endfor$
+$endif$
+
+% --- 8. LANGUAGES ---
+$if(languages)$
+\section*{Languages}
+\begin{entryDetails}
+	$for(languages)$
+	\item \textbf{$languages.name$}: $languages.level$
+	$endfor$
+\end{entryDetails}
+$endif$
+
+% --- 9. REFERENCES ---
+$if(references)$
+\section*{References}
+$references$
 $endif$
 
 % --- FOOTER ---
