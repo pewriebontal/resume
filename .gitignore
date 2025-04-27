@@ -1,6 +1,9 @@
 # Ignore secrets file
 .secrets
 
+# Backup files
+bak/
+
 # LaTeX temporary files
 *.aux
 *.log
