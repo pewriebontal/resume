@@ -4,8 +4,8 @@ on:
   push:
     branches: [ master ]
     paths:
-      - 'resume/sections/*.md'
-      - 'cover-letter/coverletter.md'  
+      - 'resume/**.md'
+      - 'cover-letter/coverletter.md'
       - 'templates/resume-template.tex'
       - 'templates/coverletter-template.tex'
       - '.github/workflows/workflow.yml'
@@ -17,18 +17,18 @@ on:
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
-    
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-      
+
     - name: Install minimal TeX dependencies and Microsoft fonts
       run: |
         sudo apt-get update
         echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
         sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra pandoc ttf-mscorefonts-installer
         sudo fc-cache -f -v
-    
+
     - name: Install Fonts
       run: |
         mkdir -p ~/.local/share/fonts
@@ -37,49 +37,37 @@ jobs:
 
     - name: Compile resume and cover letter
       run: make
-      
-    - name: Get file information
-      id: get-filenames
-      run: |
-        RESUME_FILE=$(make --no-print-directory info | grep "Resume output file:" | awk '{print $4}')
-        COVER_FILE=$(make --no-print-directory info | grep "Cover letter output file:" | awk '{print $5}')
-        echo "RESUME_FILE=${RESUME_FILE}" >> $GITHUB_ENV
-        echo "COVER_FILE=${COVER_FILE}" >> $GITHUB_ENV
-        echo "Resume file: ${RESUME_FILE}"
-        echo "Cover letter file: ${COVER_FILE}"
-    
+
     - name: Set up SSH agent
       uses: webfactory/ssh-agent@v0.8.0
       with:
         ssh-private-key: ${{ secrets.DEPLOY_KEY }}
-        
+
     - name: Add GitHub to known hosts
       run: |
         mkdir -p ~/.ssh
         ssh-keyscan github.com >> ~/.ssh/known_hosts
-    
+
     - name: Checkout storage repository
       uses: actions/checkout@v3
       with:
         repository: pewriebontal/storage
         path: storage-repo
         ssh-key: ${{ secrets.DEPLOY_KEY }}
-        
+
     - name: Create directories if needed
       run: |
         mkdir -p storage-repo/public/pdfs
-        
+
     - name: Copy files to storage repository
       run: |
-        cp ${{ env.RESUME_FILE }} storage-repo/public/pdfs/
-        cp ${{ env.COVER_FILE }} storage-repo/public/pdfs/
-        
+        cp out/* storage-repo/public/pdfs/
+
     - name: Commit and push changes
       run: |
         cd storage-repo
         git config user.name "GitHub Actions Bot"
         git config user.email "actions@github.com"
-        git add public/pdfs/$(basename ${{ env.RESUME_FILE }})
-        git add public/pdfs/$(basename ${{ env.COVER_FILE }})
+        git add public/pdfs/*
         git commit -m "Update resume and cover letter to latest version [ci skip]" || echo "No changes to commit"
         git push
