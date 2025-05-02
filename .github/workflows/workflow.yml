@@ -4,10 +4,10 @@ on:
   push:
     branches: [ master ]
     paths:
-      - 'resume/resume.md'             # Updated path
-      - 'cover-letter/coverletter.md'  # Updated path
-      - 'templates/resume-template.tex' # Updated path
-      - 'templates/coverletter-template.tex' # Updated path
+      - 'resume/sections/*.md'
+      - 'cover-letter/coverletter.md'  
+      - 'templates/resume-template.tex'
+      - 'templates/coverletter-template.tex'
       - '.github/workflows/workflow.yml'
       - 'Makefile'
   pull_request:

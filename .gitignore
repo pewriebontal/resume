@@ -23,3 +23,5 @@ bak/
 
 # signature png
 signature.png
+
+.temp/
