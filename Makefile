@@ -1,10 +1,10 @@
 # Resume and Cover Letter Compilation Makefile
 
 # Source files
-SRC_RESUME_MD = resume.md
-SRC_RESUME_TEX = resume-template.tex
-SRC_COVER_MD = coverletter.md
-SRC_COVER_TEX = coverletter-template.tex
+SRC_RESUME_MD = resume/resume.md
+SRC_RESUME_TEX = templates/resume-template.tex
+SRC_COVER_MD = cover-letter/coverletter.md
+SRC_COVER_TEX = templates/coverletter-template.tex
 SECRETS_FILE = .secrets
 SECRETS_TEMPLATE = .secrets.template
 
