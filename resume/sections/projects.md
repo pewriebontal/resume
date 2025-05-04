@@ -28,6 +28,14 @@ projects:
       - "Optimized core library functions for performance while ensuring full ANSI C compliance, validated through integration testing with other projects (BJSH, Byte's Escape)."
       - "Conducted benchmarks showing performance improvements over *libc* in specific memory operations, with *bzero* performing 8% faster on large data sets, 2% faster on medium data, and *memmove* executing 4% faster on medium-sized operations."
 
+  - name: "PDF to Markdown Converter"
+    url: "https://github.com/pewriebontal/pdf2md-api"
+    institution: "Personal Project"
+    details:
+      - "Engineered a high-performance PDF to Markdown conversion API using FastAPI, SQLAlchemy, and Celery, implementing an intelligent caching system that reduced redundant processing by 90% and decreased average conversion time from minutes to seconds."
+      - "Architected a scalable microservice infrastructure with Redis-based task queuing, achieving 3x throughput compared to synchronous processing while maintaining responsive user experience through asynchronous processing of resource-intensive conversion tasks."
+      - "Designed a robust file handling system with secure storage management, implementing SHA-256 hash verification for efficient document tracking and caching, while creating an intuitive responsive UI that simplified document processing workflows and improved user experience across desktop and mobile devices."
+
   # - name: "École 42 Piscine Projects"
   #   url: "https://github.com/pewriebontal/c-piscine"
   #   institution: "SUTD - École 42"
