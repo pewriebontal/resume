@@ -1,21 +1,27 @@
-# Resume Builder by Kai
+# Kai's Badass Resume Builder
 
 ![Resume Hero Image](assets/hero.png)
 
-A personal setup for maintaining my resume and cover letter with Markdown and automatically generating professionally formatted PDFs using LaTeX.
+Listen up! This is a straight-up killer setup for building resumes without all the garbage. Write your stuff in Markdown, get professional LaTeX PDFs. No bullshit, just results.
 
-## Overview
+## Word Is Straight Trash, Yo
 
-This repository contains the source files for my professional resume and cover letter:
+Word is like that cheap equipment that explodes your whole lab. You change one tiny thing, and BOOM - your whole document is contaminated. Images float around like they're haunted. You paste something and get weird formatting diseases. Your headers go all Heisenberg when you're not looking.
+Paragraphs get all messed up. Those fancy interface menus hide basic stuff. Big documents run slower than an RV in the desert. And don't get me started on those auto-formatting "features" that just screw everything up.
+It's not a document editor - it's like a meth lab where only bad things happen to your resume. Hard pass, yo!
 
-- Content is maintained in Markdown for easy editing (`resume/sections/*.md` and `cover-letter/coverletter.md`)
-- LaTeX templates for PDF generation (`templates/resume-template.tex` and `templates/coverletter-template.tex`)
-- Automatic build and deployment through GitHub Actions
-- Cross-platform compatibility with minimal dependencies
+## What This Bad Boy Does
 
-## Local Setup
 
-### Prerequisites
+
+- Let's you write simple text files (even my high school dropout self can handle it)
+- Turns your basic text into fancy-ass PDFs automatically
+- Builds fresh PDFs whenever you push changes (lazy and smart)
+- Runs on whatever rig you've got (no platform drama)
+
+## Setting This Up (Mad Easy)
+
+### Get These Ingredients
 
 - Make
 - Pandoc
@@ -25,6 +31,7 @@ This repository contains the source files for my professional resume and cover l
 ### Installation
 
 #### Ubuntu/Debian
+
 ```bash
 sudo apt-get update
 sudo apt-get install -y texlive-xetex texlive-fonts-recommended texlive-fonts-extra pandoc ttf-mscorefonts-installer
@@ -32,12 +39,14 @@ sudo fc-cache -f -v
 ```
 
 #### macOS
+
 ```bash
 brew install pandoc
 brew install --cask mactex-no-gui
 ```
 
 #### openSUSE Tumbleweed/Leap
+
 ```bash
 sudo zypper refresh
 sudo zypper install texlive-xetex texlive-fonts-recommended texlive-latex pandoc fetchmsttfonts
@@ -45,12 +54,14 @@ sudo fc-cache -f -v
 ```
 
 #### Fedora/RHEL/CentOS
+
 ```bash
 sudo dnf install texlive-xetex texlive-collection-fontsrecommended texlive-collection-fontsextra pandoc msttcorefonts
 sudo fc-cache -f -v
 ```
 
 #### Arch Linux
+
 ```bash
 sudo pacman -Sy texlive-most pandoc
 yay -S ttf-ms-fonts
@@ -58,11 +69,12 @@ sudo fc-cache -f -v
 ```
 
 #### Windows
+
 Install [MikTeX](https://miktex.org/download) and [Pandoc](https://pandoc.org/installing.html)
 
-## Usage
+## Cooking Instructions
 
-### Building the Resume and Cover Letter
+### Mad simple commands
 
 ```bash
 # Generate both resume and cover letter
@@ -108,6 +120,7 @@ The resume and cover letter use a `.secrets` file for personal contact informati
 - Comment out any field with `#` to use placeholder text instead
 
 Example `.secrets` file:
+
 ```
 # Personal contact information
 RESUME_PHONE="66668888"
@@ -138,12 +151,14 @@ RESUME_EMAIL="user@example.com"
 ### Deployment
 
 The GitHub Actions workflow automatically:
+
 1. Compiles the resume and cover letter on every push to master branch
 2. Installs required dependencies and fonts
 3. Deploys the PDFs to a personal storage repository
 4. Runs only when relevant files are modified
 
 The workflow detects changes in:
+
 - Markdown files in the resume and cover letter directories
 - LaTeX templates
 - Makefile and GitHub workflow configuration
@@ -153,6 +168,7 @@ The workflow detects changes in:
 ### Output Filenames
 
 The output filenames are generated based on the name in `resume/sections/header.md`:
+
 ```
 FirstName_MiddleName_LastName_SWE.pdf
 FirstName_MiddleName_LastName_CoverLetter.pdf
@@ -163,18 +179,21 @@ To change this format, modify the `RESUME_OUTPUT` and `COVER_OUTPUT` variables i
 ### LaTeX Templates
 
 The template files can be modified to adjust:
+
 - Fonts and typography
 - Colors and styling
 - Layout and spacing
 - Section organization
 
 #### Resume Template (`templates/resume-template.tex`)
+
 - Uses the Aptos font
 - Accent color: RGB(0, 102, 204)
 - Responsive layout with hyperlinks
 - Custom environments for entries
 
 #### Cover Letter Template (`templates/coverletter-template.tex`)
+
 - Matches the resume styling for consistency
 - Support for signature image
 - Paper background color: RGB(244, 241, 236)
@@ -188,4 +207,4 @@ PDF files are not tracked in this repository (see `.gitignore`).
 
 ---
 
-Made with ❤️ by [Kai](https://bontal.net)
+Cooked up with ❤️ by [Kai](https://bontal.net) - Fork it, remix it, make it yours, yo!
