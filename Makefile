@@ -9,6 +9,13 @@ SECRETS_FILE = .secrets
 SECRETS_TEMPLATE = .secrets.template
 TEMP_DIR = .temp
 
+# Backup settings
+BAK_DIR = bak
+BAK_TIMESTAMP = $(shell date +"%Y%m%d_%H%M%S")
+BAK_FILENAME = resume_backup_$(BAK_TIMESTAMP).bak
+HASH_FILE = .md_hashes
+MD_FILES = $(SECTION_FILES) $(SRC_COVER_MD)
+
 # Section files and extracted info
 SECTION_FILES = $(wildcard $(SRC_SECTIONS_DIR)/*.md)
 NAME := $(shell grep '^name:' $(SRC_SECTIONS_DIR)/header.md 2>/dev/null | sed 's/^name: "\(.*\)"$$/\1/' || echo "Unnamed")
@@ -68,6 +75,33 @@ $(OUTPUT_DIR) $(TEMP_DIR):
 resume: check-secrets $(OUTPUT_DIR) $(TEMP_DIR) $(RESUME_OUTPUT)
 
 cover: check-secrets $(OUTPUT_DIR) $(COVER_OUTPUT)
+
+hash-check:
+	@mkdir -p $(BAK_DIR)
+	@if [ ! -f $(HASH_FILE) ]; then \
+		find $(SRC_SECTIONS_DIR) -name "*.md" -type f -exec sha256sum {} \; > $(HASH_FILE); \
+		sha256sum $(SRC_COVER_MD) >> $(HASH_FILE); \
+		echo "Initial hash file created."; \
+		exit 0; \
+	fi
+	@find $(SRC_SECTIONS_DIR) -name "*.md" -type f -exec sha256sum {} \; > $(HASH_FILE).new
+	@sha256sum $(SRC_COVER_MD) >> $(HASH_FILE).new
+	@if diff -q $(HASH_FILE) $(HASH_FILE).new > /dev/null; then \
+		rm $(HASH_FILE).new; \
+		echo "No changes detected. Skipping backup."; \
+		exit 0; \
+	else \
+		mv $(HASH_FILE).new $(HASH_FILE); \
+		echo "Changes detected. Creating backup..."; \
+		exit 1; \
+	fi
+
+bak: 
+	@mkdir -p $(BAK_DIR)
+	@if ! make -s hash-check; then \
+		zip -r $(BAK_DIR)/$(BAK_FILENAME) $(SRC_SECTIONS_DIR)/*.md $(SRC_COVER_MD); \
+		echo "✓ Backup created: $(BAK_DIR)/$(BAK_FILENAME)"; \
+	fi
 
 check-secrets:
 	@if [ ! -f $(SECRETS_FILE) ]; then \
@@ -138,6 +172,7 @@ info:
 	@echo "  Resume: $(RESUME_OUTPUT)"
 	@echo "  Cover letter: $(COVER_OUTPUT)"
 	@echo "  Contact: $(PHONE_FORMATTED) | $(RESUME_EMAIL) | $(RESUME_LOCATION)"
+	@echo "  Backup directory: $(BAK_DIR)"
 
 view-resume: $(RESUME_OUTPUT)
 	@echo "Opening $(RESUME_OUTPUT)..."
@@ -164,6 +199,8 @@ help:
 	@echo "  make           - Compile both resume and cover letter"
 	@echo "  make resume    - Compile only the resume"
 	@echo "  make cover     - Compile only the cover letter"
+	@echo "  make bak       - Create a backup of markdown files (only if changes detected)"
+	@echo "  make hash-check - Check if markdown files have changed since last backup"
 	@echo "  make clean     - Remove temporary files"
 	@echo "  make distclean - Remove PDFs and temporary files"
 	@echo "  make view      - Open both resume and cover letter PDFs"
@@ -172,4 +209,4 @@ help:
 
 re: distclean all
 
-.PHONY: all resume cover clean distclean view-resume view-cover view-both view info help check-secrets re fclean
+.PHONY: all resume cover bak hash-check clean distclean view-resume view-cover view-both view info help check-secrets re fclean
