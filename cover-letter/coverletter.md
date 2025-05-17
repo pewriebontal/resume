@@ -13,7 +13,6 @@ recipient_name: "Hiring Manager"
 recipient_title: "Human Resources Department"
 company_name: "Example Company"
 company_address: "123 Corporate Plaza, Singapore 123456"
-date: "April 28, 2025"
 salutation: "Dear Hiring Manager,"
 closing: "Sincerely"
 ---
