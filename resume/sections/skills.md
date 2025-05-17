@@ -3,7 +3,7 @@ skills: true
 
 technical_items:
   - name: "Programming Languages"
-    description: "Python, C/C++, Java, C#, Dart, JavaScript/TypeScript, SQL, Shell (Bash, Zsh, PowerShell)"
+    description: "Go, Python, C/C++, Java, C#, Dart, JavaScript/TypeScript, SQL, Shell (Bash, Zsh, PowerShell)"
   - name: "Frameworks & Libraries"
     description: "FastAPI, React.js, Node.js, SQLAlchemy, Celery, Flask, Tailwind CSS, .NET MAUI, Flutter, Unity3D"
   - name: "Databases"

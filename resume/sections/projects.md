@@ -1,5 +1,14 @@
 ---
 projects:
+  - name: "NLEX - Natural Language Shell Executor (nlex.bontal.net)"
+    url: "https://nlex.bontal.net/"
+    institution: "Personal Project"
+    details:
+      - "Architected a Go-based CLI assistant enabling users to interact with their system through natural language across Bash, Zsh, Fish, and PowerShell environments."
+      - "Developed a robust command execution system with built-in security analysis that warns users about potentially dangerous operations before execution."
+      - "Created an intelligent context-aware engine leveraging command history to provide more relevant suggestions and improve workflow efficiency."
+      - "Built an intuitive interactive mode with command explanations helping users understand complex shell operations as they learn."
+
   - name: "Hiraku (AI-Powered Smart Learning Companion)"
     url: "https://github.com/HirakuAI/Hiraku-RAG"
     institution: "The University of Newcastle"
@@ -46,14 +55,14 @@ projects:
   #     - "Implemented memory management solutions and applied version control with Git in a peer-evaluated environment."
   #     - "Focused on computer science and software engineering fundamentals through hands-on C programming challenges."
 
-  - name: "Where's my Classroom?"
-    url: "https://play.google.com/store/apps/details?id=net.bontal.psba.whereismyclassroom"
-    institution: "The University of Newcastle"
-    institution_url: "https://uon.edu.au/"
-    details:
-      - "Developed a mobile app to help PSB Academy students locate classrooms in real-time using .Net Maui Framework."
-      - "Integrated web scraping and engineered an LLM-based system to parse unstructured PDF timetables for room data extraction."
-      - "Delivered a cross-platform solution (iOS/Android/Web) featuring offline caching and push notifications for room changes."
+  # - name: "Where's my Classroom?"
+  #   url: "https://play.google.com/store/apps/details?id=net.bontal.psba.whereismyclassroom"
+  #   institution: "The University of Newcastle"
+  #   institution_url: "https://uon.edu.au/"
+  #   details:
+  #     - "Developed a mobile app to help PSB Academy students locate classrooms in real-time using .Net Maui Framework."
+  #     - "Integrated web scraping and engineered an LLM-based system to parse unstructured PDF timetables for room data extraction."
+  #     - "Delivered a cross-platform solution (iOS/Android/Web) featuring offline caching and push notifications for room changes."
 
   - name: "Bing Chilling (Ambient Sound Meditation App)"
     url: "https://play.google.com/store/apps/details?id=net.bontal.bingchilling"
@@ -63,12 +72,12 @@ projects:
       - "Designed a responsive Material Design 3 user interface and managed application state using Riverpod, integrating audio_service and just_audio libraries."
       - "Published the fully functional application to the Google Play Store."
 
-  - name: "Byte's Escape (2D game in C)"
-    url: "https://github.com/pewriebontal/bytes_escape"
-    institution: "SUTD - École 42"
-    institution_url: "https://sutd.edu.sg/"
-    details:
-      - "Engineered ‘Byte’s Escape,’ a 2D game in C, implementing custom graphics rendering, physics, and game mechanics without external game engines."
-      - "Developed custom systems for rendering, physics, and state management, incorporating Depth-First Search (DFS) for core game logic and map validation."
-      - "Optimized application performance and memory usage, configuring a modular build system using Make."
+  # - name: "Byte's Escape (2D game in C)"
+  #   url: "https://github.com/pewriebontal/bytes_escape"
+  #   institution: "SUTD - École 42"
+  #   institution_url: "https://sutd.edu.sg/"
+  #   details:
+  #     - "Engineered ‘Byte’s Escape,’ a 2D game in C, implementing custom graphics rendering, physics, and game mechanics without external game engines."
+  #     - "Developed custom systems for rendering, physics, and state management, incorporating Depth-First Search (DFS) for core game logic and map validation."
+  #     - "Optimized application performance and memory usage, configuring a modular build system using Make."
 ---
