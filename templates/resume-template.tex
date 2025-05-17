@@ -68,15 +68,15 @@ $endif$
 
 % --- HEADER ---
 \begin{center}
-	{\LARGE \textbf{$name$ $if(nickname)$ ($nickname$)$endif$}}\\
-	\begin{tabular}{@{}c@{}}
-		$if(mobile_raw)$\href{https://wa.me/$country_code$$mobile_raw$}{WhatsApp: $mobile_display$}$else$Contact-on-request$endif$
-		$if(email)$| \href{mailto:$email$}{$email$} $endif$
-		$if(location)$| $location$$endif$                                                                      \\
-		$if(portfolio)$\href{https://$portfolio$?utm_source=resume & utm_medium=document}{$portfolio$} $endif$
-		$if(linkedin)$| \href{https://$linkedin$}{$linkedin$} $endif$
-		$if(github)$| \href{https://github.com/$github$}{github.com/$github$}$endif$
-	\end{tabular}
+    {\LARGE \textbf{$name$ $if(nickname)$ ($nickname$)$endif$}}\\
+    \begin{tabular}{@{}c@{}}
+        $if(mobile_raw)$\href{https://wa.me/$country_code$$mobile_raw$}{WhatsApp: $mobile_display$}$else$Contact-on-request$endif$
+        $if(email)$ ~|~ \href{mailto:$email$}{$email$} $endif$
+        $if(location)$ ~|~ $location$$endif$                                                                      \\
+        $if(portfolio)$\href{https://$portfolio$?utm_source=resume & utm_medium=document}{$portfolio$} $endif$
+        $if(linkedin)$ ~|~ \href{https://$linkedin$}{$linkedin$} $endif$
+        $if(github)$ ~|~ \href{https://github.com/$github$}{github.com/$github$}$endif$
+    \end{tabular}
 \end{center}
 
 % --- 1. OBJECTIVE ---
@@ -117,20 +117,12 @@ $endif$
 % --- 4. SKILLS ---
 $if(skills)$
 \section*{Skills}
-\begin{multicols}{2}
-	\noindent{\color{sectioncolor}\textbf{Technical Skills}}\\
-	$for(technical_items)$
-	\noindent\textbf{$technical_items.name$:} $technical_items.description$\\[2pt]
-	$endfor$
-
-	\columnbreak
-
-	\noindent{\color{sectioncolor}\textbf{Soft Skills}}\\
-	$for(professional_items)$
-	\noindent\textbf{$professional_items.name$:} $professional_items.description$\\[2pt]
-	$endfor$
-\end{multicols}
-\vspace{-25pt}
+$for(technical_items)$
+\noindent\textbf{$technical_items.name$:} $technical_items.description$\\[2pt]
+$endfor$
+$if(professional_items)$
+\noindent\textbf{Soft Skills:} $for(professional_items)$$professional_items.name$$sep$, $endfor$
+$endif$
 $endif$
 
 % --- 5. PROJECTS ---

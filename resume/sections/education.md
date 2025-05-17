@@ -15,8 +15,7 @@ education:
     degree_url: "https://42singapore.sg/"
     period: "Sep 2023 - Sep 2024"
     details:
-      - "Specializing in System Programming, Algorithms and Data Structures."
-      - "Project-based curriculum through peer-to-peer learning methodology."
+      - "Specialized in System Programming, Algorithms and Data Structures through a project-based, peer-to-peer learning methodology."
 
   - institution: "PSB Academy, Singapore"
     institution_url: "http://psb-academy.edu.sg/"
