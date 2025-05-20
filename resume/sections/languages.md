@@ -1,7 +1,7 @@
 ---
 languages:
   - name: "English"
-    level: "Professional Working Proficiency"
+    level: "Fluent"
   - name: "Burmese"
     level: "Native / Bilingual Proficiency"
 ---

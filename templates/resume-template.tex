@@ -1,25 +1,38 @@
 \documentclass[10.5pt,a4paper]{article}
 
 % --- PACKAGES ---
-\usepackage[margin=0.5in]{geometry}
+\usepackage[margin=0.45in]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
 \usepackage{fontspec}
 \usepackage{xcolor}
 \usepackage{multicol}
+\usepackage{fontawesome}
+\usepackage{pagecolor}
 $if(fontfamily)$
-\usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
+  \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
 $endif$
 
 % --- FONT & COLOR DEFINITIONS ---
 \setmainfont{Aptos} % {Georgia}
+\newfontfamily{\helveticabold}{Helvetica}
 \definecolor{sectioncolor}{RGB}{0, 102, 204}
 \definecolor{linkcolor}{RGB}{0, 0, 0}
+% \definecolor{paperbg}{RGB}{255, 255, 250} % Ivory
 
 % --- LAYOUT & SPACING ---
-\titleformat{\section}{\large\bfseries\color{sectioncolor}}{\thesection}{1em}{}[\titlerule]
-\titleformat{\subsection}{\bfseries}{\thesubsection}{1em}{}
+\titleformat{\section}
+  {\large\bfseries\color{sectioncolor}}
+  {\thesection}
+  {1em}
+  {}
+  [\titlerule]
+\titleformat{\subsection}
+  {\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
 \titlespacing*{\section}{0pt}{8pt}{3pt}
 \titlespacing*{\subsection}{0pt}{5pt}{2pt}
 \setlength{\parindent}{0pt}
@@ -30,22 +43,48 @@ $endif$
 
 % --- HYPERREF SETUP ---
 \hypersetup{
-  colorlinks=true,
+  pdftitle={$name$'s Resume},
+  pdfauthor={$name$},
+  pdfsubject={IT Undergraduate Resume | Systems Programming, Full-Stack Development, AI Specialist},
+  pdfkeywords={
+    $name$, Kai, IT Undergraduate, Student Mentor, Software Engineer, Systems Programmer, 
+    Full-Stack Developer, AI Developer, Go, Golang, Python, C, C++, ANSI C, Java, C-Sharp, 
+    Dart, JavaScript, TypeScript, SQL, Shell, Bash, FastAPI, React.js, Node.js, SQLAlchemy, 
+    Celery, Flask, Tailwind CSS, Dotnet, MAUI, Flutter, LlamaIndex, Riverpod, Material Design 3, 
+    AI, Artificial Intelligence, LLM, Large Language Models, RAG, Retrieval-Augmented Generation, 
+    YOLO, Object Detection, Llama, Fine-tuning, NLP, MySQL, SQLite, Redis, ChromaDB, Vector DB, 
+    SQL Server, Relational Databases, NoSQL, Systems Programming, Low-level Programming, 
+    Memory Management, Pointer Arithmetic, Bash Scripting, Linux, Unix, Docker, Git, Version Control, 
+    CI/CD, Make, GDB, Valgrind, Web Servers, Vercel, Lexer, Tokenizer, Parser, Piping, I/O, Signals, 
+    Job Control, Benchmarking, Data Structures, Algorithms, DSA, OOP, Object-Oriented Programming, 
+    API Design, REST API, JWT, Microservices, Async Processing, Caching, Web Scraping, 
+    Offline Caching, Push Notifications, Custom Graphics, Physics, DFS, CLI, Natural Language, 
+    AI Chat, Mobile App, Meditation App, C Library, UNIX Shell, PDF Converter, 2D Game, 
+    Problem-Solving, Meticulous, Teamwork, Communication, Adaptability, Singapore, 
+    University of Newcastle, SUTD, École 42, PSB Academy, resume, technical resume, 
+    software development, IT
+  },
+  pdflang={en-US},
+  pdfcreator={LaTeX with hyperref package},
+  pdfproducer={pdfTeX}, 
+  unicode=true,
+  pdffitwindow=true,
+  pdfstartview={FitH},
+  pdfnewwindow=true,       
+  pdfpagemode={UseOutlines},  
+  bookmarks=true,
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  bookmarkstype=toc,
+  colorlinks=true,     
+  anchorcolor=black,
+  breaklinks=true,            
+  linktoc=all,
   linkcolor=linkcolor,
   filecolor=linkcolor,
   urlcolor=linkcolor,
-  pdftitle={Resume – $name$},
-  pdfauthor={$name$},
-  pdfsubject={Professional Resume},
-  pdfkeywords={resume, $name$, software engineer, system programming, C, React, Flutter},
-  pdflang={en-US},
-  pdfstartview={FitH},
-  pdfpagemode={UseOutlines},
-  bookmarksopen=true,
-  bookmarksnumbered=true,
   hidelinks=false,
   pdfborderstyle={/S/U/W 1},
-  breaklinks=true
 }
 
 % --- CUSTOM COMMANDS & ENVIRONMENTS ---
@@ -54,29 +93,34 @@ $endif$
 \newcommand{\entryHeaderLinked}[3]{\noindent\textbf{\href{#1}{#2}} \hfill \daterange{#3}}
 \newcommand{\entrySubHeader}[1]{\textit{#1}}
 \newcommand{\entrySubHeaderLinked}[2]{\textit{\href{#1}{#2}}}
-\newenvironment{entryDetails}{%
-  \begin{itemize}[leftmargin=*, itemsep=1pt, topsep=1pt, parsep=0pt]
-}{%
-  \end{itemize}
-  \vspace{-0.1cm}
-}
+
+\newenvironment{entryDetails}
+  {%
+    \begin{itemize}[leftmargin=2.5em, rightmargin=2.5em, itemsep=1pt, topsep=1pt, parsep=0pt]
+  }
+  {%
+    \end{itemize}
+    \vspace{-0.1cm}
+  }
 
 % --- DOCUMENT START ---
 \AtBeginDocument{\thispagestyle{empty}}
 
 \begin{document}
+% \pagecolor{paperbg}
 
 % --- HEADER ---
 \begin{center}
-    {\LARGE \textbf{$name$ $if(nickname)$ ($nickname$)$endif$}}\\
-    \begin{tabular}{@{}c@{}}
-        $if(mobile_raw)$\href{https://wa.me/$country_code$$mobile_raw$}{WhatsApp: $mobile_display$}$else$Contact-on-request$endif$
-        $if(email)$ ~|~ \href{mailto:$email$}{$email$} $endif$
-        $if(location)$ ~|~ $location$$endif$                                                                      \\
-        $if(portfolio)$\href{https://$portfolio$?utm_source=resume & utm_medium=document}{$portfolio$} $endif$
-        $if(linkedin)$ ~|~ \href{https://$linkedin$}{$linkedin$} $endif$
-        $if(github)$ ~|~ \href{https://github.com/$github$}{github.com/$github$}$endif$
-    \end{tabular}
+	{\Huge \textbf{\helveticabold $name$} $if(nickname)$(\helveticabold $nickname$)$endif$} \\
+	\vspace{4pt}
+	\begin{tabular}{@{}c@{}}
+		$if(email)$\href{mailto:$email$}{$email$}$endif$
+		$if(mobile_raw)$ \quad|\quad \href{https://wa.me/$country_code$$mobile_raw$}{WhatsApp: +$country_code$ $mobile_display$}$else$ \quad|\quad Contact-on-request$endif$
+		$if(location)$ \quad|\quad Location: $location$$endif$                                                \\[2pt]
+		$if(portfolio)$\href{https://$portfolio$?utm_source=resume & utm_medium=document}{$portfolio$}$endif$
+		$if(linkedin)$ \quad|\quad \href{https://www.linkedin.com/in/$linkedin$}{linkedin.com/in/$linkedin$}$endif$
+		$if(github)$ \quad|\quad \href{https://github.com/$github$}{github.com/$github$}$endif$
+	\end{tabular}
 \end{center}
 
 % --- 1. OBJECTIVE ---
@@ -117,19 +161,22 @@ $endif$
 % --- 4. SKILLS ---
 $if(skills)$
 \section*{Skills}
-$for(technical_items)$
-\noindent\textbf{$technical_items.name$:} $technical_items.description$\\[2pt]
-$endfor$
-$if(professional_items)$
-\noindent\textbf{Soft Skills:} $for(professional_items)$$professional_items.name$$sep$, $endfor$
-$endif$
+\begin{multicols}{2}
+	\raggedcolumns
+	$for(technical_items)$
+	\noindent\textbf{$technical_items.name$:} $technical_items.description$\\[2pt]
+	$endfor$
+	$if(professional_items)$
+	\noindent\textbf{Soft Skills:} $for(professional_items)$$professional_items.name$$sep$, $endfor$
+	$endif$
+\end{multicols}
 $endif$
 
 % --- 5. PROJECTS ---
 $if(projects)$
 \section*{Projects}
 $for(projects)$
-\noindent\textbf{$if(projects.url)$\href{$projects.url$}{$projects.name$}$else$$projects.name$$endif$} \hfill \textbf{$if(projects.institution_url)$\href{$projects.institution_url$}{$projects.institution$}$else$\textit{$projects.institution$}$endif$} % Changed \textit to \textbf for the linked institution, kept italic for non-linked
+\noindent\textbf{$if(projects.url)$\href{$projects.url$}{$projects.name$}$else$$projects.name$$endif$} \hfill \textbf{$if(projects.institution_url)$\href{$projects.institution_url$}{$projects.institution$}$else$\textit{$projects.institution$}$endif$}
 \begin{entryDetails}
 	$for(projects.details)$
 	\item $projects.details$
@@ -153,11 +200,12 @@ $if(education.degree_url)$
 $else$
 \entrySubHeader{$education.degree$}
 $endif$
-\begin{entryDetails}
+\begin{itemize}[leftmargin=1.5em, rightmargin=1em, itemsep=1pt, topsep=1pt, parsep=0pt]
 	$for(education.details)$
 	\item $education.details$
-	$endfor$
-\end{entryDetails}
+	      $endfor$
+\end{itemize}
+\vspace{-0.1cm}
 $endfor$
 $endif$
 
@@ -187,13 +235,29 @@ $endif$
 % --- 9. REFERENCES ---
 $if(references)$
 \section*{References}
-$references$
+\begin{multicols}{3}
+	\raggedcolumns
+	$for(references)$
+	\noindent
+	\begin{minipage}[t]{\linewidth}
+		\textbf{$references.name$}\\
+		$if(references.title)$%
+		\textit{$references.title$}\\
+		$endif$%
+		$if(references.subtitle)$%
+		\textit{$references.subtitle$}\\
+		$endif$%
+		\href{mailto:$references.contact$}{$references.contact$}%
+	\end{minipage}\par
+	\vspace{8pt}
+	$endfor$
+\end{multicols}
 $endif$
 
 % --- FOOTER ---
 \vfill
 \begin{center}
-	\footnotesize{Updated \today \\ \textit{PDF contains active hyperlinks to referenced resources}}
+	\footnotesize{Updated \today}
 \end{center}
 
 \end{document}

@@ -4,14 +4,14 @@ extracurricular:
     organization: "Singapore"
     period: "Feb 2024"
     details:
-      - "Managed crowd flow and assisted diverse international visitors, demonstrating effective communication during the large-scale River Hongbao 2024 festival."
+      - "Effectively managed crowd flow and assisted diverse international visitors, demonstrating strong communication and interpersonal skills during a large-scale cultural festival."
 
   - position: "DJ, Springheads 2024 at SUTD"
     position_url: "https://img.bontal.net/p/2"
     organization: "Singapore"
     period: "Jan 2024"
     details:
-      - 'Performed as Warm-up DJ under the alias "DJ Bontal" for a crowd of 500 at the Springheads concert.'
+      - 'Performed as a DJ for a crowd of approximately 500 at the Springheads concert, showcasing public performance and engagement abilities.'
 
   # - position: "Event DJ, Color Stones Bar & Restaurant"
   #   organization: "Burma"

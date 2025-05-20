@@ -7,7 +7,7 @@ education:
     period: "Jan 2024 - Aug 2025"
     details:
       - "**High Distinction (HD)** : Object-Oriented Programming"
-      - "**Distinctions (D)** : Data Structures, The Digital Economy, Project Management, and Web Technologies."
+      - "**Distinctions (D)** : Applied Artificial Intelligence, Human-Computer Interaction, Data Structures, The Digital Economy, Project Management, and Web Technologies."
 
   - institution: "Singapore University of Technology and Design (SUTD)"
     institution_url: "https://sutd.edu.sg/"
@@ -23,5 +23,5 @@ education:
     degree_url: "https://dl.bontal.net/academic/diploma-it/23L030726.pdf"
     period: "Jan 2023 - Nov 2023"
     details:
-      - "Recieved A's in all courses completed."
+      - "Consistently achieved 'A' grades across all completed InfoComm Technology coursework."
 ---
