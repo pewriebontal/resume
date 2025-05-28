@@ -4,8 +4,8 @@ projects:
     url: "https://nlex.bontal.net/"
     institution: "Personal Project"
     details:
-      - "Architected a Go-based CLI for natural language system interaction, significantly improving accessibility for complex shell operations."
-      - "Engineered a robust command execution system with context-aware engine to provide relevant suggestions, streamlining user workflows and boosting productivity, built-in security analysis to proactively warn users of potentially dangerous operations."
+      - "Architected an AI-powered Go CLI to translate natural language into shell commands (Bash, Zsh, PowerShell), simplifying complex terminal operations and enhancing accessibility."
+      - "Engineered context-aware suggestions from command history and a rule-based security module to warn of dangerous operations pre-execution, promoting safer usage."
 
   - name: "Hiraku (AI-Powered Smart Learning Companion)"
     url: "https://github.com/HirakuAI/Hiraku-RAG"
@@ -16,6 +16,13 @@ projects:
       - "Fine-tuned a Llama language model on domain-specific educational data, improving contextual understanding and response accuracy."
       - "Developed a secure REST API (JWT) and a responsive React.js/Tailwind CSS frontend."
 
+  - name: "Bon and Jason's Shell (bjsh) - UNIX Shell"
+    url: "https://pewrie.bontal.net/projects/bjsh"
+    institution: "SUTD - École 42"
+    institution_url: "https://sutd.edu.sg/"
+    details:
+      - "Engineered a robust, POSIX-compliant, bash-like UNIX shell in C through its full lifecycle: designed and implemented a full command interpretation pipeline (lexer, tokenizer, parser), I/O redirection, piping, signal handling, and job control; optimized for high reliability and performance via comprehensive testing and benchmarking."
+      
   - name: "Where's my Classroom?"
     url: "https://play.google.com/store/apps/details?id=net.bontal.psba.whereismyclassroom"
     institution: "The University of Newcastle"
@@ -29,30 +36,21 @@ projects:
     url: "https://play.google.com/store/apps/details?id=net.bontal.bingchilling"
     institution: "Personal Project"
     details:
-      - "Developed a Flutter mobile application delivering customizable ambient sounds with background audio playback, designed to aid relaxation and focus."
-      - "Designed a responsive Material Design 3 user interface and managed application state using Riverpod."
-      - "Successfully published the fully functional application to the Google Play Store, making it accessible to a wide audience."
+      - "Developed and successfully published a Flutter mobile application delivering customizable ambient sounds with background audio playback, designed to aid relaxation and focus, utilizing Riverpod for state management."
 
   - name: "BYAMC (Bon's Yet Another Mini C System Library)"
     url: "https://github.com/pewriebontal/byamc"
     institution: "SUTD - École 42"
     institution_url: "https://sutd.edu.sg/"
     details:
-      - "Developed a lightweight ANSI C system library (string, memory, I/O, math, list ops), achieving 8% faster bzero performance over standard libc."
-
-  - name: "Bon and Jason's Shell (bjsh) - UNIX Shell"
-    url: "https://pewrie.bontal.net/projects/bjsh"
-    institution: "SUTD - École 42"
-    institution_url: "https://sutd.edu.sg/"
-    details:
-      - "Engineered a bash-like custom ANSI C UNIX shell through its full lifecycle: designed; implemented core operations including a command interpretation pipeline (lexer, tokenizer/parser), piping, I/O, signals, job control; and optimized for high reliability/performance on UNIX platforms via comprehensive testing/benchmarking."
+      - "Developed a lightweight, high-performance ANSI C system library providing core functionalities (string manipulation, memory allocation, I/O, math, list operations), achieving an 8% performance improvement in bzero over standard libc."
 
   - name: "PDF to Markdown Converter"
     url: "https://github.com/pewriebontal/pdf2md-api"
     institution: "Personal Project"
     details:
-      - "Engineered a high-performance PDF to Markdown conversion API (FastAPI, SQLAlchemy, Celery), reducing redundant processing by 90% via intelligent caching."
-      - "Architected a scalable microservice with a Redis-based task queue, achieving a 3x throughput improvement over synchronous methods."
+      - "Engineered a PDF to Markdown microservice with hash-based caching, enabling a 90% reduction in redundant processing by instantly serving previously converted files from cache/database."
+      - "Architected a scalable solution with a Redis-based task queue (Celery), achieving 3x throughput over synchronous methods."
 
   # - name: "École 42 Piscine Projects"
   #   url: "https://github.com/pewriebontal/c-piscine"

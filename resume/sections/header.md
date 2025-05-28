@@ -10,5 +10,5 @@ linkedin: "pewriebontal"
 github: "pewriebontal"
 # objective: "Systems Analyst or Systems Programmar"
 #objective: "Software Engineer with Python, Java, and React experience, seeking a position to apply programming skills in practical solutions."
-summary: "Results-oriented IT undergraduate specializing in systems programming (Go, C/C++), full-stack development (Python, JS/TS), and AI (RAG, LLMs). Proven ability to design, build, and optimize complex software through extensive projects. Seeking to contribute technical expertise and a meticulous problem-solving approach to innovative software development teams."
+summary: "Results-driven Junior Software Engineer, bringing 3+ years of project-based experience, specializing in full-stack development (Go, Python, JS/TS), systems programming (C/C++), and AI applications (RAG, LLMs). Proven in designing, building, and optimizing complex, scalable, production-grade software—including real-time systems and robust backends—through these projects. Eager to apply technical expertise and meticulous problem-solving to innovative, cloud-focused engineering teams."
 ---

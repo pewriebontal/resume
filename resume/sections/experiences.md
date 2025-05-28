@@ -6,8 +6,10 @@ experience:
     title_url: "https://42singapore.sg/"
     period: "Jun 2023 –  Sep 2024"
     details:
-      - "Worked on 16 low-level system projects in C, including bjsh, byamc, and byte's escape, mastering memory management, pointer arithmetic, and bash scripting."
-      - "Practiced agile, collaborative development within a 150-member cohort, utilizing Git for version control, conducting peer code reviews, debugging memory leaks, and implementing unit tests."
+      - "Worked on 16 system-level software projects in C, including custom libraries, a UNIX shell, and a 2D game."
+      - "Mastered pointer arithmetic, memory management, and performance optimization using Valgrind and GDB."
+      - "Collaborated in Agile-style peer teams with Git, test-driven development, and continuous peer reviews."
+
   - company: "University of Newcastle"
     company_url: "https://uon.edu.au/"
     title: "Student Mentor, Peer Assisted Study Sessions (PASS)"
