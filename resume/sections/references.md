@@ -6,7 +6,7 @@ references:
     contact: "Vsithira.Vadivel@newcastle.edu.au"
   - name: "Mr Bobby Chung"
     title: "Lecturer (Information Technology) &"
-    subtitle: "Final Year Project Supervisor"
+    subtitle: "Supervisor (Work Integrated Learning)"
     contact: "Bobby.Chung@newcastle.edu.au"
   - name: "Ms Jade Ong"
     title: "Learning Advisor"

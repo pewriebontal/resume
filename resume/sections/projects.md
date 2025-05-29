@@ -7,15 +7,6 @@ projects:
       - "Architected an AI-powered Go CLI to translate natural language into shell commands (Bash, Zsh, PowerShell), simplifying complex terminal operations and enhancing accessibility."
       - "Engineered context-aware suggestions from command history and a rule-based security module to warn of dangerous operations pre-execution, promoting safer usage."
 
-  - name: "Hiraku (AI-Powered Smart Learning Companion)"
-    url: "https://github.com/HirakuAI/Hiraku-RAG"
-    institution: "The University of Newcastle"
-    institution_url: "https://uon.edu.au/"
-    details:
-      - "Co-led backend development of an AI chat assistant using Python (Flask) & SQLite; integrated a RAG pipeline (LlamaIndex, ChromaDB) for contextual responses from course materials."
-      - "Fine-tuned a Llama language model on domain-specific educational data, improving contextual understanding and response accuracy."
-      - "Developed a secure REST API (JWT) and a responsive React.js/Tailwind CSS frontend."
-
   - name: "Bon and Jason's Shell (bjsh) - UNIX Shell"
     url: "https://pewrie.bontal.net/projects/bjsh"
     institution: "SUTD - École 42"
