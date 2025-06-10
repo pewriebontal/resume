@@ -4,24 +4,23 @@ projects:
     url: "https://nlex.bontal.net/"
     institution: "Personal Project"
     details:
-      - "Architected an AI-powered Go CLI to translate natural language into shell commands (Bash, Zsh, PowerShell), simplifying complex terminal operations and enhancing accessibility."
-      - "Engineered context-aware suggestions from command history and a rule-based security module to warn of dangerous operations pre-execution, promoting safer usage."
+      - "Developed a Go interactive shell that translates natural language text into executable shell commands."
+      - "Included a critical security check to warn users before running potentially destructive commands (eg. sudo rm -rf /* --no-preserve-root)."
 
   - name: "Bon and Jason's Shell (bjsh) - UNIX Shell"
     url: "https://pewrie.bontal.net/projects/bjsh"
     institution: "SUTD - École 42"
     institution_url: "https://sutd.edu.sg/"
     details:
-      - "Engineered a robust, POSIX-compliant, bash-like UNIX shell in C through its full lifecycle: designed and implemented a full command interpretation pipeline (lexer, tokenizer, parser), I/O redirection, piping, signal handling, and job control; optimized for high reliability and performance via comprehensive testing and benchmarking."
+      - "Engineered a POSIX-compliant UNIX shell from scratch in C, implementing the full command pipeline, I/O redirection, piping, signal handling, and job control; optimized for high reliability and performance via comprehensive testing and benchmarking."
       
   - name: "Where's my Classroom?"
     url: "https://play.google.com/store/apps/details?id=net.bontal.psba.whereismyclassroom"
     institution: "The University of Newcastle"
     institution_url: "https://uon.edu.au/"
     details:
-      - "Developed a cross-platform mobile app (.Net Maui) to help PSB Academy students locate classrooms in real-time."
-      - "Integrated web scraping techniques and engineered an LLM-based system to parse unstructured PDF timetables for accurate room data extraction."
-      - "Delivered a user-friendly solution featuring offline caching for accessibility without an internet connection and push notifications for timely room changes."
+      - "Solved a real-world campus problem by building a mobile app that replaced a confusing and inefficient timetable system of scattered PDFs and websites."
+      - "Engineered a system to parse unstructured PDF files using an LLM, delivering a unified, real-time schedule with offline caching and push notifications."
 
   - name: "Bing Chilling (Ambient Sound Meditation App)"
     url: "https://play.google.com/store/apps/details?id=net.bontal.bingchilling"
@@ -40,8 +39,8 @@ projects:
     url: "https://github.com/pewriebontal/pdf2md-api"
     institution: "Personal Project"
     details:
-      - "Engineered a PDF to Markdown microservice with hash-based caching, enabling a 90% reduction in redundant processing by instantly serving previously converted files from cache/database."
-      - "Architected a scalable solution with a Redis-based task queue (Celery), achieving 3x throughput over synchronous methods."
+      - "Engineered a backend microservice in Python to convert PDF files. Implemented hash-based caching to reduce redundant file processing by 90%."
+      - "Designed for high throughput using a Redis/Celery task queue, achieving 3x the performance of synchronous methods."
 
   # - name: "École 42 Piscine Projects"
   #   url: "https://github.com/pewriebontal/c-piscine"

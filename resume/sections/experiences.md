@@ -2,13 +2,13 @@
 experience:
   - company: "University of Newcastle"
     company_url: "https://uon.edu.au/"
-    title: "Software Engineer Intern, (Work Integrated Learning)"
+    title: "Software Engineer Intern"
     title_url: "https://github.com/HirakuAI/Hiraku-RAG"
     period: "Jan 2025 – Present"
     details:
-      - "Developed an internal AI learning platform (Python/FastAPI, JWT; React/Next.js 13/TS, TailwindCSS), integrating a RAG pipeline (LlamaIndex) delivering contextual academic support & enhancing student learning."
-      - "Applied Extreme Programming (XP) principles to enable rapid iterative, high-quality software delivery."
-      - "Built semantic search with ChromaDB, integrated LlamaParse for document ingestion, and implemented OAuth-based authentication to enable secure, AI-powered interaction with academic course materials."
+      - "Developed an internal AI learning platform using Python (FastAPI) and React (Next.js) to provide students with contextual answers directly from academic materials."
+      - "Engineered a RAG pipeline using LlamaIndex for document ingestion and built semantic search with ChromaDB."
+      - "Implemented secure user access for the platform through OAuth-based authentication."
 
   - company: "Singapore University of Technology and Design (SUTD)"
     company_url: "https://sutd.edu.sg/"
@@ -16,15 +16,13 @@ experience:
     title_url: "https://42singapore.sg/"
     period: "Jun 2023 –  Sep 2024"
     details:
-      - "Worked on 16 system-level software projects in C, including custom libraries, a UNIX shell, and a 2D game."
-      - "Mastered pointer arithmetic, memory management, and performance optimization using Valgrind and GDB."
-      - "Collaborated in Agile-style peer teams with Git, test-driven development, and continuous peer reviews."
+      - "Worked on 16 system-level software projects in C, mastering memory management and performance optimization."
+      - "Built a UNIX shell, custom libraries, and 2D games from the ground up in a project-based, peer-to-peer learning environment."
 
   - company: "University of Newcastle"
     company_url: "https://uon.edu.au/"
     title: "Student Mentor, Peer Assisted Study Sessions (PASS)"
     period: "May 2024 – Dec 2024"
     details:
-      - "Mentored 10+ students weekly in Object-Oriented Programming & Data Structures, enhancing conceptual understanding and problem-solving skills,  and resulting in higher average grades and project marks."
-      - "Boosted student comprehension of algorithm design & coding practices by developing targeted materials and delivering live code walkthroughs in Java, C++, and DSA."
+      - "Mentored 10+ students in Data Structures and OOP (C++, Java), improving their problem-solving skills and project grades through targeted live-coding sessions."
 ---

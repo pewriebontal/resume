@@ -1,27 +1,23 @@
 ---
 skills: true
-
 technical_items:
   - name: "Programming Languages"
-    description: "Go, Python, C/C++, TypeScript, JavaScript, Java, C#, Dart, Rust, SQL, Shell (Bash, Zsh, PowerShell)"
+    description: "Go, Python, TypeScript, JavaScript, SQL, Rust, C/C++, Shell (Bash, Zsh)"
+
+  - name: "Frameworks & Libraries"
+    description: "Node.js, React.js, Next.js, Express.js, FastAPI, Flask, Celery, Tailwind CSS"
 
   - name: "Databases"
-    description: "PostgreSQL, MySQL, SQLite, SQL Server, Redis, ChromaDB, MongoDB, Firebase"
-
-  - name: "Core Concepts"
-    description: "Data Structures & Algorithms, Object-Oriented Programming (OOP), API Design, Asynchronous Processing, System Design Principles, Concurrency, Caching, Scalability & Performance Optimization, Design Patterns"
-
+    description: "PostgreSQL, MySQL, Redis, SQLite, MongoDB, ChromaDB"
+  
   - name: "AI/ML"
-    description: "LLMs, RAG, YOLO, TensorFlow, LlamaIndex, LangChain"
-  #  break
-  - name: "Frameworks & Libraries"
-    description: "FastAPI, Flask, React.js, Next.js, Node.js, Express.js, SQLAlchemy, Celery, Tailwind CSS, .NET MAUI, Flutter, Unity3D, LlamaIndex"
-
-  - name: "Business Intelligence & Reporting"
-    description: "Power BI, LaTeX, Jupyter Notebook, Matplotlib, Excel"
+    description: "RAG, LLMs, LlamaIndex, LangChain, TensorFlow"
 
   - name: "Systems, DevOps & Cloud Infrastructure"
-    description: "Linux/Unix, Git, Docker, Web Servers, Vercel, Make, GDB, Valgrind, Azure, AWS, CI/CD, Microservices, Serverless Functions"
+    description: "AWS, Docker, Git, CI/CD, Serverless Functions, Linux/Unix, Microservices, GDB, Valgrind"
+
+  - name: "Core Concepts"
+    description: "Data Structures & Algorithms, System Design, API Design, OOP, Concurrency, Caching, Scalability"
 
 professional_items:
   - name: "Problem-Solving, Attention to Detail, Technical Communication, Cross-Functional Collaboration, Adaptability, Initiative, Critical Thinking, Peer Mentorship"
