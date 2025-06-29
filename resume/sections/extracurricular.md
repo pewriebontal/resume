@@ -11,7 +11,7 @@ extracurricular:
     organization: "Singapore"
     period: "Jan 2024"
     details:
-      - 'Performed as a DJ for a crowd of approximately 500 at the Springheads concert, showcasing public performance and engagement abilities.'
+      - 'Performed a live DJ set for 500+ attendees at the Springheads concert.'
 
   # - position: "Event DJ, Color Stones Bar & Restaurant"
   #   organization: "Burma"

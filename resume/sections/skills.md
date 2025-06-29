@@ -2,16 +2,16 @@
 skills: true
 technical_items:
   - name: "Programming Languages"
-    description: "Go, Python, TypeScript, JavaScript, SQL, Rust, C/C++, Shell (Bash, Zsh)"
+    description: "C/C++, Java, Go, Python, Rust, TypeScript, JavaScript, SQL, Shell (Bash, Zsh)"
 
   - name: "Frameworks & Libraries"
     description: "Node.js, React.js, Next.js, Express.js, FastAPI, Flask, Celery, Tailwind CSS"
 
   - name: "Databases"
-    description: "PostgreSQL, MySQL, Redis, SQLite, MongoDB, ChromaDB"
+    description: "PostgreSQL, MySQL, Redis, SQLite, MongoDB, ChromaDB, IsarDB"
   
   - name: "AI/ML"
-    description: "RAG, LLMs, LlamaIndex, LangChain, TensorFlow"
+    description: "RAG, LLMs, LlamaIndex, LangChain, TensorFlow, PyTorch, YOLO"
 
   - name: "Systems, DevOps & Cloud Infrastructure"
     description: "AWS, Docker, Git, CI/CD, Serverless Functions, Linux/Unix, Microservices, GDB, Valgrind"

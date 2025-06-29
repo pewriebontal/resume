@@ -25,7 +25,7 @@ projects:
       - "Solved a real-world campus problem by building a mobile app that replaced a confusing and inefficient timetable system of scattered PDFs and websites."
       - "Engineered a system to parse unstructured PDF files using an LLM, delivering a unified, real-time schedule with offline caching and push notifications."
 
-  - name: "Catalyst - AI-Powered Productivity Engine"
+  - name: "Catalyst - AI-Powered Productivity App"
     tools: "Flutter, Dart, Riverpod, Isar, LLMs, Material You, API Design"
     url: "https://catalyst.bontal.net/"
     institution: "Personal Project"

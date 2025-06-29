@@ -6,9 +6,10 @@ experience:
     title_url: "https://github.com/HirakuAI/Hiraku-RAG"
     period: "Jan 2025 – Present"
     details:
-      - "Developed an internal AI learning platform using Python (FastAPI) and React (Next.js) to provide students with contextual answers directly from academic materials."
-      - "Engineered a RAG pipeline using LlamaIndex for document ingestion and built semantic search with ChromaDB."
-      - "Implemented secure user access for the platform through OAuth-based authentication."
+      - "Developed a full-stack RAG AI learning platform using Python (FastAPI) and React (Next.js) to provide students with contextual answers from academic materials."
+      - "Engineered a high-speed ingestion pipeline with LlamaIndex and ChromaDB to parse and index over 100 documents in under 3 seconds for semantic search."
+      - "Integrated secure, multi-user access with OAuth2 authentication and session management."
+
 
   - company: "Singapore University of Technology and Design (SUTD)"
     company_url: "https://sutd.edu.sg/"

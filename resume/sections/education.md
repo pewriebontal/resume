@@ -4,7 +4,7 @@ education:
     institution_url: "https://uon.edu.au/"
     degree: "Bachelor of Information Technology"
     degree_url: "https://dl.bontal.net/academic/bachelor-bit/uon_bit_transcript.pdf"
-    period: "Jan 2024 - Aug 2025"
+    period: "2025"
     details:
       - "**High Distinction (HD)** : Object-Oriented Programming"
       - "**Distinctions (D)** : Applied Artificial Intelligence, Human-Computer Interaction, Data Structures, The Digital Economy, Project Management, and Web Technologies."
@@ -21,7 +21,7 @@ education:
     institution_url: "http://psb-academy.edu.sg/"
     degree: "Diploma in InfoComm Technology"
     degree_url: "https://dl.bontal.net/academic/diploma-it/23L030726.pdf"
-    period: "Jan 2023 - Nov 2023"
-    details:
-      - "Consistently achieved 'A' grades across all completed InfoComm Technology coursework."
+    period: "2023"
+    # details:
+    #   - "Consistently achieved 'A' grades across all completed InfoComm Technology coursework."
 ---
