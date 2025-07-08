@@ -1,5 +1,14 @@
 ---
 projects:
+  - name: "Catalyst - AI-Powered Productivity App"
+    tools: "Flutter, Dart, Riverpod, Isar, AI/NLP, Material You, API Design"
+    url: "https://pewrie.bontal.net/projects/catalyst"
+    institution: "Personal Project"
+    details:
+      - "Developed and published a productivity application that intelligently transforms natural language into structured, actionable priorities using an AI engine and the Eisenhower Matrix."
+      - "Engineered a local-first Flutter architecture featuring a platform-adaptive UI for distinct desktop and mobile experiences, powered by a modular AI service with multiple API providers and a rule-based offline engine."
+      - "Secured a 4.7-star rating on Google Play with 370+ installs (mobile and desktop). Maintained high stability with a near-zero crash rate across Desktop & Android devices while acquiring users in over 15 countries."
+
   - name: "NLEX - Natural Language Executor"
     tools: "Go, Shell, LLMs, API Design"
     url: "https://nlex.bontal.net/"
@@ -16,6 +25,13 @@ projects:
     details:
       - "Engineered a POSIX-compliant UNIX shell from scratch in C, implementing the full command pipeline, I/O redirection, piping, signal handling, and job control; optimized for high reliability and performance via comprehensive testing and benchmarking."
 
+  - name: "Bing Chilling (Ambient Sound Meditation App)"
+    tools: "Flutter, Dart, Riverpod, Material Design"
+    url: "https://play.google.com/store/apps/details?id=net.bontal.bingchilling"
+    institution: "Personal Project"
+    details:
+      - "Developed and successfully published a Flutter mobile application delivering customizable ambient sounds with background audio playback, designed to aid relaxation and focus, utilizing Riverpod for state management."
+
   - name: "Where's my Classroom?"
     tools: "Flutter, Dart, Web Scraping, LLMs, API Design, SQLite"
     url: "https://play.google.com/store/apps/details?id=net.bontal.psba.whereismyclassroom"
@@ -24,22 +40,6 @@ projects:
     details:
       - "Solved a real-world campus problem by building a mobile app that replaced a confusing and inefficient timetable system of scattered PDFs and websites."
       - "Engineered a system to parse unstructured PDF files using an LLM, delivering a unified, real-time schedule with offline caching and push notifications."
-
-  - name: "Catalyst - AI-Powered Productivity App"
-    tools: "Flutter, Dart, Riverpod, Isar, LLMs, Material You, API Design"
-    url: "https://catalyst.bontal.net/"
-    institution: "Personal Project"
-    details:
-      - "Architected a desktop-first productivity application that intelligently transforms natural language into structured, actionable priorities using an AI engine and the Eisenhower Matrix."
-      - "Engineered a secure, local-first architecture with an encrypted on-device database, ensuring full offline functionality and complete user data privacy."
-      - "Delivered a highly personalized UI with an adaptive Material You theming engine that sources colors from the user’s system or manual selection."
-
-  - name: "Bing Chilling (Ambient Sound Meditation App)"
-    tools: "Flutter, Dart, Riverpod, Material Design"
-    url: "https://play.google.com/store/apps/details?id=net.bontal.bingchilling"
-    institution: "Personal Project"
-    details:
-      - "Developed and successfully published a Flutter mobile application delivering customizable ambient sounds with background audio playback, designed to aid relaxation and focus, utilizing Riverpod for state management."
 
   - name: "BYAMC (Bon's Yet Another Mini C System Library)"
     tools: "C, Makefile, GDB, Valgrind"
