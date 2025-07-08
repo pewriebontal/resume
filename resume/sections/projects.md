@@ -7,7 +7,7 @@ projects:
     details:
       - "Developed and published a productivity application that intelligently transforms natural language into structured, actionable priorities using an AI engine and the Eisenhower Matrix."
       - "Engineered a local-first Flutter architecture featuring a platform-adaptive UI for distinct desktop and mobile experiences, powered by a modular AI service with multiple API providers and a rule-based offline engine."
-      - "Secured a 4.7-star rating on Google Play with 370+ installs (mobile and desktop). Maintained high stability with a near-zero crash rate across Desktop & Android devices while acquiring users in over 15 countries."
+      - "Secured a 4.7-star rating on Google Play with 370+ installs (mobile and desktop) within one week. Maintained high stability with a near-zero crash rate across Desktop & Android devices while acquiring users in over 15 countries."
 
   - name: "NLEX - Natural Language Executor"
     tools: "Go, Shell, LLMs, API Design"
@@ -66,6 +66,14 @@ projects:
   #     - "Completed 12 individual and 4 group projects in C programming, Linux system administration, and shell scripting during the intensive Piscine bootcamp"
   #     - "Implemented memory management solutions and applied version control with Git in a peer-evaluated environment."
   #     - "Focused on computer science and software engineering fundamentals through hands-on C programming challenges."
+
+  - name: "Personal Package Repository (pkg.bontal.net)"
+    tools: "DevOps, System Administration, Security"
+    url: "https://pkg.bontal.net"
+    institution: "Personal Project"
+    details:
+      - "Engineered and maintain a production-grade package repository from a bare-metal Linux server, serving GPG-signed packages for custom tools like Catalyst and NLEX."
+      - "Implemented comprehensive multi-distro support for APT (Debian/Ubuntu), DNF/YUM (Fedora/RHEL), Zypper (openSUSE), and Pacman (Arch Linux) repositories."
 
   - name: "Byte's Escape (2D game in C)"
     tools: "C, Xorg, Makefile, GDB, Valgrind"
