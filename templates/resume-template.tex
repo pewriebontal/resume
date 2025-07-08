@@ -177,7 +177,7 @@ $endif$
 $if(projects)$
 \section*{Projects}
 $for(projects)$
-\noindent\textbf{$if(projects.url)$\href{$projects.url$}{$projects.name$}$else$$projects.name$$endif$}$if(projects.tools)$ \quad|\quad \textit{\small $projects.tools$}$endif$ \hfill \textbf{$if(projects.institution_url)$\href{$projects.institution_url$}{$projects.institution$}$else$\textit{$projects.institution$}$endif$}
+\noindent\textbf{$if(projects.url)$\href{$projects.url$}{$projects.name$\hspace{0.3em}\raisebox{-0.1em}{\small\faExternalLink}}$else$$projects.name$$endif$}$if(projects.tools)$ \quad|\quad \textit{\small $projects.tools$}$endif$ \hfill \textbf{$if(projects.institution_url)$\href{$projects.institution_url$}{$projects.institution$}$else$\textit{$projects.institution$}$endif$}
 \begin{entryDetails}
 	$for(projects.details)$
 	\item $projects.details$
