@@ -7,7 +7,7 @@ projects:
     details:
       - "Developed and published a productivity application that intelligently transforms natural language into structured, actionable priorities using an AI engine and the Eisenhower Matrix."
       - "Engineered a local-first Flutter architecture featuring a platform-adaptive UI for distinct desktop and mobile experiences, powered by a modular AI service with multiple API providers and a rule-based offline engine."
-      - "Secured a 4.7-star rating on Google Play with 370+ installs (mobile and desktop) within one week. Maintained high stability with a near-zero crash rate across Desktop & Android devices while acquiring users in over 15 countries."
+      - " Secured a 4.7-star rating and grew to 440+ installs across Google Play and Flathub within one week. Maintained high stability with a near-zero crash rate across Desktop & Android devices while acquiring users in over 15 countries."
 
   - name: "NLEX - Natural Language Executor"
     tools: "Go, Shell, LLMs, API Design"
