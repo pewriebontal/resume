@@ -91,9 +91,9 @@ $endif$
 % --- CUSTOM COMMANDS & ENVIRONMENTS ---
 \newcommand{\daterange}[1]{\textbf{#1}}
 \newcommand{\entryHeader}[2]{\noindent\textbf{#1} \hfill \daterange{#2}}
-\newcommand{\entryHeaderLinked}[3]{\noindent\textbf{\href{#1}{#2}} \hfill \daterange{#3}}
+\newcommand{\entryHeaderLinked}[3]{\noindent\textbf{\href{#1?utm_source=resume&utm_medium=document&utm_campaign=experience}{#2}} \hfill \daterange{#3}}
 \newcommand{\entrySubHeader}[1]{\textit{#1}}
-\newcommand{\entrySubHeaderLinked}[2]{\textit{\href{#1}{#2}}}
+\newcommand{\entrySubHeaderLinked}[2]{\textit{\href{#1?utm_source=resume&utm_medium=document&utm_campaign=experience}{#2}}}
 
 \newenvironment{entryDetails}
   {%
@@ -116,11 +116,11 @@ $endif$
 	\vspace{2pt}
 	\begin{tabular}{@{}c@{}}
 		$if(email)$\href{mailto:$email$}{$email$}$endif$
-		$if(mobile_raw)$ \quad|\quad \href{https://wa.me/$country_code$$mobile_raw$}{WhatsApp: +$country_code$ $mobile_display$}$else$ \quad|\quad Contact-on-request$endif$
+		$if(mobile_raw)$ \quad|\quad \href{https://wa.me/$country_code$$mobile_raw$?utm_source=resume&utm_medium=document&utm_campaign=contact}{WhatsApp: +$country_code$ $mobile_display$}$else$ \quad|\quad Contact-on-request$endif$
 		$if(location)$ \quad|\quad $location$$endif$                                                          \\[2pt]
-		$if(portfolio)$\href{https://$portfolio$?utm_source=resume & utm_medium=document}{$portfolio$}$endif$
-		$if(linkedin)$ \quad|\quad \href{https://www.linkedin.com/in/$linkedin$}{linkedin.com/in/$linkedin$}$endif$
-		$if(github)$ \quad|\quad \href{https://github.com/$github$}{github.com/$github$}$endif$
+		$if(portfolio)$\href{https://$portfolio$?utm_source=resume&utm_medium=document&utm_campaign=portfolio}{$portfolio$}$endif$
+		$if(linkedin)$ \quad|\quad \href{https://www.linkedin.com/in/$linkedin$?utm_source=resume&utm_medium=document&utm_campaign=profile}{linkedin.com/in/$linkedin$}$endif$
+		$if(github)$ \quad|\quad \href{https://github.com/$github$?utm_source=resume&utm_medium=document&utm_campaign=profile}{github.com/$github$}$endif$
 	\end{tabular}
 \end{center}
 
@@ -178,7 +178,7 @@ $endif$
 $if(projects)$
 \section*{Projects}
 $for(projects)$
-\noindent\textbf{$if(projects.url)$\href{$projects.url$}{$projects.name$\hspace{0.3em}\raisebox{-0.1em}{\small\faExternalLink}}$else$$projects.name$$endif$}$if(projects.tools)$ \quad|\quad \textit{\small $projects.tools$}$endif$ \hfill \textbf{$if(projects.institution_url)$\href{$projects.institution_url$}{$projects.institution$}$else$\textit{$projects.institution$}$endif$}
+\noindent\textbf{$if(projects.url)$\href{$projects.url$?utm_source=resume&utm_medium=document&utm_campaign=projects}{$projects.name$\hspace{0.3em}\raisebox{-0.1em}{\small\faExternalLink}}$else$$projects.name$$endif$}$if(projects.tools)$ \quad|\quad \textit{\small $projects.tools$}$endif$ \hfill \textbf{$if(projects.institution_url)$\href{$projects.institution_url$?utm_source=resume&utm_medium=document&utm_campaign=projects}{$projects.institution$}$else$\textit{$projects.institution$}$endif$}
 \begin{entryDetails}
 	$for(projects.details)$
 	\item $projects.details$
@@ -217,7 +217,7 @@ $endif$
 $if(extracurricular)$
 \section*{Volunteer \& Extracurricular Experience}
 $for(extracurricular)$
-\noindent\textbf{$if(extracurricular.position_url)$\href{$extracurricular.position_url$}{$extracurricular.position$}$else$$extracurricular.position$$endif$}, $extracurricular.organization$ \hfill \daterange{$extracurricular.period$}
+\noindent\textbf{$if(extracurricular.position_url)$\href{$extracurricular.position_url$?utm_source=resume&utm_medium=document&utm_campaign=extracurricular}{$extracurricular.position$}$else$$extracurricular.position$$endif$}, $extracurricular.organization$ \hfill \daterange{$extracurricular.period$}
 \begin{entryDetails}
 	$for(extracurricular.details)$
 	\item $extracurricular.details$
