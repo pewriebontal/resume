@@ -1,13 +1,19 @@
 ---
 education:
-  - institution: "The University of Newcastle"
+  - institution: "Singapore University of Technology and Design (SUTD)"
+    institution_url: "https://42singapore.sg/"
+    degree: "Ecole 42 Programme"
+    degree_url: "https://42singapore.sg/"
+    period: "Present"
+
+  - institution: "The University of Newcastle, Australia"
     institution_url: "https://uon.edu.au/"
     degree: "Bachelor of Information Technology"
     degree_url: "https://dl.bontal.net/academic/bachelor-bit/uon_bit_transcript.pdf"
     period: "2025"
-    details:
-      - "**High Distinction (HD)** : Object-Oriented Programming"
-      - "**Distinctions (D)** : Applied Artificial Intelligence, Human-Computer Interaction, Data Structures, The Digital Economy, Project Management, and Web Technologies."
+    # details:
+    #   - "**High Distinction (HD)** : Object-Oriented Programming"
+    #   - "**Distinctions (D)** : Applied Artificial Intelligence, Human-Computer Interaction, Data Structures, The Digital Economy, Project Management, and Web Technologies."
 
   # - institution: "Singapore University of Technology and Design (SUTD)"
   #   institution_url: "https://sutd.edu.sg/"
