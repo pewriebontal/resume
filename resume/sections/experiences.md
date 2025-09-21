@@ -1,28 +1,47 @@
 ---
 experience:
-  - company: "University of Newcastle"
-    company_url: "https://uon.edu.au/"
-    title: "Software Engineer Intern"
-    title_url: "https://github.com/HirakuAI/Hiraku-RAG"
-    period: "Jan 2025 – Present"
+  - company: "Invigilo Technologies Pte. Ltd."
+    company_url: "https://www.invigilo.ai/"
+    country: "Singapore"
+    title: "DevOps Intern"
+    period: "Nov 2025 – Apr 2026"
     details:
-      - "Developed a full-stack RAG AI learning platform using Python (FastAPI) and React (Next.js) to provide students with contextual answers from academic materials."
-      - "Engineered a high-speed ingestion pipeline with LlamaIndex and ChromaDB to parse and index over 100 documents in under 3 seconds for semantic search."
-      - "Integrated secure, multi-user access with OAuth2 authentication and session management."
+      - "Position Confirmed"
 
-
-  - company: "Singapore University of Technology and Design (SUTD)"
-    company_url: "https://sutd.edu.sg/"
-    title: "Pisciner, Cadet - École 42"
-    title_url: "https://42singapore.sg/"
-    period: "Jun 2023 –  Sep 2024"
+  - company: "International Horizons Limited"
+    company_url: "https://papinee.com"
+    country: "Hong Kong"
+    title: "Software Engineer / IT Consultant Intern"
+    period: "Aug 2025 - Oct 2025"
     details:
-      - "Worked on 16 system-level software projects in C, mastering memory management and performance optimization."
-      - "Built a UNIX shell, custom libraries, and 2D games from the ground up in a project-based, peer-to-peer learning environment."
+      - "Consulted on and developed full-stack IT solutions to support for the company’s B2B → B2C transition; this included relaunching the core website and new platform for comic universe, and the shopify for e-commerce."
+      - "Served as the sole IT developer supporting the CEO in a lean team, handling end-to-end responsibilities from planning and coding to testing, deployment, and maintenance using React.js, Sanity CMS, Node.js serverless functions, microservices, Vercel, and Supabase."
 
-  - company: "University of Newcastle"
-    company_url: "https://uon.edu.au/"
-    title: "Student Mentor, Peer Assisted Study Sessions (PASS)"
+  - company: "Newcastle Australia IHE Pte. Ltd."
+    company_url: "https://newcastleaustralia.edu.sg/"
+    country: "Singapore"
+    title: "Software Engineering Intern"
+    title_url: "https://github.com/HirakuAI"
+    period: "Jan 2025 – Jul 2025"
+    details:
+      - "Co-Led the development of a full-stack AI learning platform that provide students with contextual answers from academic materials to reduce hallucination."
+      - "Implemented backend LLM pipeline (Python, FastAPI, RAG retrieval), Discord-like channels, and frontend Svelte components."
+      - "In charge of Deployment and maintainance of the platform on Azure."
+
+  # - company: "Singapore University of Technology and Design (SUTD)"
+  #   company_url: "https://sutd.edu.sg/"
+  #   country: "Singapore"
+  #   title: "Pisciner, Cadet - École 42 Programme"
+  #   title_url: "https://42singapore.sg/"
+  #   period: "Jun 2023 – Sep 2024"
+  #   details:
+  #     - "Worked on 16 system-level software projects in C, mastering memory management and performance optimization."
+  #     - "Built a UNIX shell, custom libraries, and 2D games from the ground up in a project-based, peer-to-peer learning environment."
+
+  - company: "Newcastle Australia IHE Pte. Ltd."
+    company_url: "https://newcastleaustralia.edu.sg/"
+    country: "Singapore"
+    title: "Teaching Assistant, Peer Assisted Study Sessions (PASS)"
     period: "May 2024 – Dec 2024"
     details:
       - "Mentored 10+ students in Data Structures and OOP (C++, Java), improving their problem-solving skills and project grades through targeted live-coding sessions."
