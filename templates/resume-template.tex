@@ -38,7 +38,7 @@ $endif$
 \titlespacing*{\subsection}{0pt}{2pt}{1pt}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.05em}
-\setlist{topsep=1pt, parsep=0pt, itemsep=0.5pt, partopsep=0pt}
+\setlist{topsep=1pt, parsep=0pt, itemsep=3pt, partopsep=0pt} % Increased itemsep for better readability
 \setlist[itemize]{label={\textbullet}}
 \renewcommand{\baselinestretch}{1.1}
 
@@ -97,7 +97,7 @@ $endif$
 
 \newenvironment{entryDetails}
   {%
-    \begin{itemize}[leftmargin=2.5em, rightmargin=2.5em, itemsep=0.5pt, topsep=1pt, parsep=0pt]
+    \begin{itemize}[leftmargin=2.5em, rightmargin=2.5em, itemsep=3pt, topsep=1pt, parsep=0pt] % Increased itemsep for better readability
   }
   {%
     \end{itemize}
@@ -116,11 +116,11 @@ $endif$
 	\vspace{2pt}
 	\begin{tabular}{@{}c@{}}
 		$if(email)$\href{mailto:$email$}{$email$}$endif$
-		$if(mobile_raw)$ \quad|\quad \href{https://wa.me/$country_code$$mobile_raw$?utm_source=resume&utm_medium=document&utm_campaign=contact}{WhatsApp: +$country_code$ $mobile_display$}$else$ \quad|\quad Contact-on-request$endif$
-		$if(location)$ \quad|\quad $location$$endif$                                                          \\[2pt]
-		$if(portfolio)$\href{https://$portfolio$?utm_source=resume&utm_medium=document&utm_campaign=portfolio}{$portfolio$}$endif$
-		$if(linkedin)$ \quad|\quad \href{https://www.linkedin.com/in/$linkedin$?utm_source=resume&utm_medium=document&utm_campaign=profile}{linkedin.com/in/$linkedin$}$endif$
-		$if(github)$ \quad|\quad \href{https://github.com/$github$?utm_source=resume&utm_medium=document&utm_campaign=profile}{github.com/$github$}$endif$
+		$if(mobile_raw)$ \quad|\quad \href{https://wa.me/$country_code$$mobile_raw$?utm_source=resume & utm_medium=document & utm_campaign=contact}{WhatsApp: +$country_code$ $mobile_display$}$else$ \quad|\quad Contact-on-request$endif$
+		$if(location)$ \quad|\quad $location$$endif$                                                                                                                                                                                        \\[2pt]
+		$if(portfolio)$\href{https://$portfolio$?utm_source=resume                                    & utm_medium=document & utm_campaign=portfolio}{$portfolio$}$endif$
+		$if(linkedin)$ \quad|\quad \href{https://www.linkedin.com/in/$linkedin$?utm_source=resume     & utm_medium=document & utm_campaign=profile}{linkedin.com/in/$linkedin$}$endif$
+		$if(github)$ \quad|\quad \href{https://github.com/$github$?utm_source=resume                  & utm_medium=document & utm_campaign=profile}{github.com/$github$}$endif$
 	\end{tabular}
 \end{center}
 
@@ -141,9 +141,9 @@ $if(experience)$
 \section*{Experience}
 $for(experience)$
 $if(experience.company_url)$
-\entryHeaderLinked{$experience.company_url$}{$experience.company$}{$experience.period$}
+\noindent\textbf{\href{$experience.company_url$?utm_source=resume&utm_medium=document&utm_campaign=experience}{$experience.company$}}$if(experience.country)$, $experience.country$$else$$if(experience.country_code)$, $experience.country_code$$endif$$endif$ \hfill \daterange{$experience.period$}
 $else$
-\entryHeader{$experience.company$}{$experience.period$}
+\noindent\textbf{$experience.company$}$if(experience.country)$, $experience.country$$else$$if(experience.country_code)$, $experience.country_code$$endif$$endif$ \hfill \daterange{$experience.period$}
 $endif$
 \\
 $if(experience.title_url)$
@@ -203,13 +203,14 @@ $else$
 \entrySubHeader{$education.degree$}
 $endif$
 $if(education.details)$
-\begin{itemize}[leftmargin=1.5em, rightmargin=1em, itemsep=0.5pt, topsep=1pt, parsep=0pt]
+\begin{itemize}[leftmargin=1.5em, rightmargin=1em, itemsep=3pt, topsep=1pt, parsep=0pt] % Increased itemsep for better readability
 	$for(education.details)$
 	\item $education.details$
 	      $endfor$
 \end{itemize}
 \vspace{-0.1cm}
 $endif$
+\par\vspace{4pt}
 $endfor$
 $endif$
 
