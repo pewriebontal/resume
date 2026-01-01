@@ -8,7 +8,7 @@
 \usepackage{fontspec}
 \usepackage{xcolor}
 \usepackage{multicol}
-\usepackage{fontawesome}
+\usepackage{fontawesome5}
 \usepackage{pagecolor}
 $if(fontfamily)$
   \usepackage[$for(fontfamilyoptions)$$fontfamilyoptions$$sep$,$endfor$]{$fontfamily$}
@@ -25,17 +25,18 @@ $endif$
 % --- LAYOUT & SPACING ---
 \titleformat{\section}
   {\large\bfseries\color{sectioncolor}}
-  {\thesection}
-  {1em}
+  {}
+  {0em}
   {}
   [\titlerule]
 \titleformat{\subsection}
   {\bfseries}
-  {\thesubsection}
-  {1em}
+  {}
+  {0em}
   {}
 \titlespacing*{\section}{0pt}{2pt}{1pt}
 \titlespacing*{\subsection}{0pt}{2pt}{1pt}
+\setcounter{secnumdepth}{-1}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.05em}
 \setlist{topsep=1pt, parsep=0pt, itemsep=3pt, partopsep=0pt} % Increased itemsep for better readability
@@ -75,7 +76,7 @@ $endif$
   pdfpagemode={UseOutlines},  
   bookmarks=true,
   bookmarksopen=true,
-  bookmarksnumbered=true,
+  bookmarksnumbered=false,
   bookmarkstype=toc,
   colorlinks=true,     
   anchorcolor=black,
@@ -91,9 +92,9 @@ $endif$
 % --- CUSTOM COMMANDS & ENVIRONMENTS ---
 \newcommand{\daterange}[1]{\textbf{#1}}
 \newcommand{\entryHeader}[2]{\noindent\textbf{#1} \hfill \daterange{#2}}
-\newcommand{\entryHeaderLinked}[3]{\noindent\textbf{\href{#1?utm_source=resume&utm_medium=document&utm_campaign=experience}{#2}} \hfill \daterange{#3}}
+\newcommand{\entryHeaderLinked}[3]{\noindent\textbf{\href{#1?utm_source=resume\%26utm_medium=document\%26utm_campaign=experience}{#2}} \hfill \daterange{#3}}
 \newcommand{\entrySubHeader}[1]{\textit{#1}}
-\newcommand{\entrySubHeaderLinked}[2]{\textit{\href{#1?utm_source=resume&utm_medium=document&utm_campaign=experience}{#2}}}
+\newcommand{\entrySubHeaderLinked}[2]{\textit{\href{#1?utm_source=resume\%26utm_medium=document\%26utm_campaign=experience}{#2}}}
 
 \newenvironment{entryDetails}
   {%
@@ -116,11 +117,11 @@ $endif$
 	\vspace{2pt}
 	\begin{tabular}{@{}c@{}}
 		$if(email)$\href{mailto:$email$}{$email$}$endif$
-		$if(mobile_raw)$ \quad|\quad \href{https://wa.me/$country_code$$mobile_raw$?utm_source=resume & utm_medium=document & utm_campaign=contact}{WhatsApp: +$country_code$ $mobile_display$}$else$ \quad|\quad Contact-on-request$endif$
+		$if(mobile_raw)$ \quad|\quad \href{https://wa.me/$country_code$$mobile_raw$?utm_source=resume\%26utm_medium=document\%26utm_campaign=contact}{WhatsApp: +$country_code$ $mobile_display$}$else$ \quad|\quad Contact-on-request$endif$
 		$if(location)$ \quad|\quad $location$$endif$                                                                                                                                                                                        \\[2pt]
-		$if(portfolio)$\href{https://$portfolio$?utm_source=resume                                    & utm_medium=document & utm_campaign=portfolio}{$portfolio$}$endif$
-		$if(linkedin)$ \quad|\quad \href{https://www.linkedin.com/in/$linkedin$?utm_source=resume     & utm_medium=document & utm_campaign=profile}{linkedin.com/in/$linkedin$}$endif$
-		$if(github)$ \quad|\quad \href{https://github.com/$github$?utm_source=resume                  & utm_medium=document & utm_campaign=profile}{github.com/$github$}$endif$
+		$if(portfolio)$\href{https://$portfolio$?utm_source=resume\%26utm_medium=document\%26utm_campaign=portfolio}{$portfolio$}$endif$
+		$if(linkedin)$ \quad|\quad \href{https://www.linkedin.com/in/$linkedin$?utm_source=resume\%26utm_medium=document\%26utm_campaign=profile}{linkedin.com/in/$linkedin$}$endif$
+		$if(github)$ \quad|\quad \href{https://github.com/$github$?utm_source=resume\%26utm_medium=document\%26utm_campaign=profile}{github.com/$github$}$endif$
 	\end{tabular}
 \end{center}
 
@@ -132,16 +133,16 @@ $endif$
 
 % --- 2. SUMMARY ---
 $if(summary)$
-\section*{Summary}
+\section{Summary}
 $summary$
 $endif$
 
 % --- 3. EXPERIENCE ---
 $if(experience)$
-\section*{Experience}
+\section{Experience}
 $for(experience)$
 $if(experience.company_url)$
-\noindent\textbf{\href{$experience.company_url$?utm_source=resume&utm_medium=document&utm_campaign=experience}{$experience.company$}}$if(experience.country)$, $experience.country$$else$$if(experience.country_code)$, $experience.country_code$$endif$$endif$ \hfill \daterange{$experience.period$}
+\noindent\textbf{\href{$experience.company_url$?utm_source=resume\%26utm_medium=document\%26utm_campaign=experience}{$experience.company$}}$if(experience.country)$, $experience.country$$else$$if(experience.country_code)$, $experience.country_code$$endif$$endif$ \hfill \daterange{$experience.period$}
 $else$
 \noindent\textbf{$experience.company$}$if(experience.country)$, $experience.country$$else$$if(experience.country_code)$, $experience.country_code$$endif$$endif$ \hfill \daterange{$experience.period$}
 $endif$
@@ -159,9 +160,20 @@ $endif$
 $endfor$
 $endif$
 
+
+$if(publications)$
+
+\section{Publications}
+$for(publications)$
+$publications.citation$
+
+$endfor$
+$endif$
+
+
 % --- 4. SKILLS ---
 $if(skills)$
-\section*{Skills}
+\section{Skills}
 \begin{multicols}{2}
 	\raggedcolumns
 	$for(technical_items)$
@@ -176,9 +188,9 @@ $endif$
 
 % --- 5. PROJECTS ---
 $if(projects)$
-\section*{Projects}
+\section{Projects}
 $for(projects)$
-\noindent\textbf{$if(projects.url)$\href{$projects.url$?utm_source=resume&utm_medium=document&utm_campaign=projects}{$projects.name$\hspace{0.3em}\raisebox{-0.1em}{\small\faExternalLink}}$else$$projects.name$$endif$}$if(projects.tools)$ \quad|\quad \textit{\small $projects.tools$}$endif$ \hfill \textbf{$if(projects.institution_url)$\href{$projects.institution_url$?utm_source=resume&utm_medium=document&utm_campaign=projects}{$projects.institution$}$else$\textit{$projects.institution$}$endif$}
+\noindent\textbf{$if(projects.url)$\href{$projects.url$?utm_source=resume\%26utm_medium=document\%26utm_campaign=projects}{$projects.name$\hspace{0.3em}\raisebox{-0.1em}{\small\faIcon{external-link-alt}}}$else$$projects.name$$endif$}$if(projects.tools)$ \quad|\quad \textit{\small $projects.tools$}$endif$ \hfill \textbf{$if(projects.institution_url)$\href{$projects.institution_url$?utm_source=resume\%26utm_medium=document\%26utm_campaign=projects}{$projects.institution$}$else$\textit{$projects.institution$}$endif$}
 \begin{entryDetails}
 	$for(projects.details)$
 	\item $projects.details$
@@ -189,7 +201,7 @@ $endif$
 
 % --- 6. EDUCATION ---
 $if(education)$
-\section*{Education}
+\section{Education}
 $for(education)$
 $if(education.institution_url)$
 \entryHeaderLinked{$education.institution_url$}{$education.institution$}{$education.period$}
@@ -216,9 +228,9 @@ $endif$
 
 % --- 7. VOLUNTEER & EXTRACURRICULAR ---
 $if(extracurricular)$
-\section*{Volunteer \& Extracurricular Experience}
+\section{Volunteer \& Extracurricular Experience}
 $for(extracurricular)$
-\noindent\textbf{$if(extracurricular.position_url)$\href{$extracurricular.position_url$?utm_source=resume&utm_medium=document&utm_campaign=extracurricular}{$extracurricular.position$}$else$$extracurricular.position$$endif$}, $extracurricular.organization$ \hfill \daterange{$extracurricular.period$}
+\noindent\textbf{$if(extracurricular.position_url)$\href{$extracurricular.position_url$?utm_source=resume\%26utm_medium=document\%26utm_campaign=extracurricular}{$extracurricular.position$}$else$$extracurricular.position$$endif$}, $extracurricular.organization$ \hfill \daterange{$extracurricular.period$}
 \begin{entryDetails}
 	$for(extracurricular.details)$
 	\item $extracurricular.details$
@@ -229,7 +241,7 @@ $endif$
 
 % --- 8. LANGUAGES ---
 $if(languages)$
-\section*{Languages}
+\section{Languages}
 \begin{entryDetails}
 	$for(languages)$
 	\item \textbf{$languages.name$}: $languages.level$
@@ -239,7 +251,7 @@ $endif$
 
 % --- 9. REFERENCES ---
 $if(references)$
-\section*{References}
+\section{References}
 \begin{multicols}{3}
 	\raggedcolumns
 	$for(references)$

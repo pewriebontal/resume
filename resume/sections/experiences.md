@@ -6,7 +6,9 @@ experience:
     title: "DevOps Intern"
     period: "Nov 2025 – Apr 2026"
     details:
-      - "Position Confirmed"
+      - "Managed Linux-based edge environments to ensure high availability and stability for production computer vision pipeline using NVIDIA DeepStream on Azure IoT Edge devices."
+      - "Developed internal tooling to support development workflows and operational efficiency."
+      - "Collaborated with the engineering team to improve infrastructure reliability and streamline the software release process."
 
   - company: "International Horizons Limited"
     company_url: "https://papinee.com"
